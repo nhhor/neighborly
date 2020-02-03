@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.destroy_all
-Review.destroy_all
+# User.destroy_all
+# Review.destroy_all
 
 15.times do |index|
   users = []
@@ -19,9 +19,20 @@ Review.destroy_all
       reviewer_id: Faker::Number.between(from: 1, to: 100),
       user_comments: Faker::Lorem.paragraph(sentence_count: 2, supplemental: true),
       user_like: Faker::Boolean.boolean(true_ratio: 0.2)
-      # Event.create!
+      Event.create! event_name: Faker::GreekPhilosophers.name,
+      event_date: Faker::Date.forward(days: 90),
+      event_time: nil,
+      event_address: Faker::Address.street_address,
+      event_zip: Faker::Number.between(from: 97201, to: 97299),
+      event_city: Faker::Address.city,
+      event_state: Faker::Address.state,
+      event_description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: true),
+      event_age_min: 21,
+      event_category: 'dinner',
+      event_min_seats: 2,
+      event_max_seats: 10,
+      user_id: user.id
     end
   end
 end
-puts "Review #{i}: Reviewer id is #{review.reviewer_id} User id is '#{review.user_id}'
-User liked: '#{review.user_like}' Review content is '#{review.user_comments}'."
+p "worked..."
