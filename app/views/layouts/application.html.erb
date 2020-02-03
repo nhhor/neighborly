@@ -11,11 +11,11 @@
 
   <body>
 <br><br><br><br>
-    <%= image_tag("neighborly_logo_house.png", class: "NBanner", alt: "Neighborly Logo") %>
+  
     <% if current_user %>
    <%= current_user.user_email %> | <%= link_to "Sign out", '/signout' %>
  <% else %>
-   <%= link_to "Sign up", 'signup' %> | <%= link_to "Sign in", '/signin' %>
+   <%= link_to "Sign up", signup_path %> | <%= link_to "Sign in", '/signin' %>
  <% end %>
 
  <%= flash[:alert] %>
