@@ -1,0 +1,20 @@
+<h1>Products</h1>
+
+
+
+
+<h3>All Products</h3>
+<% if @user.reviews.any? %>
+<ul>
+  <% @user.reviews.each do |review| %>
+  <li><%= link_to review.reviewer_id.user_email, review_path(review) %></li>
+  <% end %>
+</ul>
+<% else %>
+<p>There are no reviews yet.</p>
+<% end %>
+
+
+<% if current_user == true %>
+<p><%= link_to "Create new review", new_review_path %></p>
+<% end %>
