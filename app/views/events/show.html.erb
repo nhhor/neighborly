@@ -1,0 +1,11 @@
+<% if @events.any? %>
+  <ul>
+    <% @events.each do |event| %>
+      <li><%= event.name %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are currently no records to display.</p>
+<% end %>
+
+<a href="/events/new">Add a new album</a>
