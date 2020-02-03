@@ -1,16 +1,16 @@
+<h1><%= link_to "Create an Event", new_event_path %></h1>
 <% if @events.any? %>
     <% @events.each do |event| %>
 
       <h1><%= link_to event.event_name, event_path(event) %></h1>
       <ul>
-        <li>WHEN:<%= event.event_date %> at <%= event.event_time %></li>
+        <li>WHEN: <%= event.event_date %> at <%= event.event_time %></li>
 
-      <li>WHERE:<%= event.event_address %>,<%= event.event_city %>, <%= event.event_state %>, <%= event.event_zip %></li>
-      <li>AGE REQUIREMENT: <%= event.event_age_min %>+ </li>
-      <p>DESCRIPTION: <%= event.event_description %></p>
+        <li>WHERE: <%= event.event_address %>,<%= event.event_city %>, <%= event.event_state %>, <%= event.event_zip %></li>
+        <li>AGE REQUIREMENT: <%= event.event_age_min %>+ </li>
+      <li>DESCRIPTION: <%= event.event_description %></li>
     </ul>
     <% end %>
 <% else %>
   <p>There are no events.</p>
 <% end %>
-<h1><%= link_to "Create an Event", new_event_path %></h1>
