@@ -1,19 +1,18 @@
 
 class EventsController < ApplicationController
-
+  before_action :authorize, only: [:new, :create, :edit, :update, :destroy]
   def index
+
     @events = Event.all
     render :index
   end
 
   def new
-    @user = User.find(params[:user_id])
-    @event = @user.events.new
+    @event = Event.new
   end
 
   def create
-    @user = User.find(params[:user_id])
-        @event = @user.events.new(event_params)
+        @event = Event.new(event_params)
     if @event.save
        flash[:notice] = "Your Event has been created!"
       redirect_to event_path(@user, @event)
@@ -25,13 +24,11 @@ class EventsController < ApplicationController
 
 
     def edit
-      @user = User.find(params[:user_id])
       @event = Event.find(params[:id])
       render :edit
     end
 
     def show
-      @user = User.find(params[:user_id])
       @event = Event.find(params[:id])
       render :show
     end
