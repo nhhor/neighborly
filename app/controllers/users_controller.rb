@@ -6,6 +6,34 @@ class UsersController < ApplicationController
       @user = User.new
     end
 
+    def show
+      @user = User.find(params[:id])
+      render :show
+    end
+
+    def edit
+      @user = User.find(params[:id])
+
+      render :edit
+    end
+
+    def index
+      @users = User.all
+      render :index
+    end
+
+    def update
+      @user = User.find(params[:id])
+      if @user.update(user_params)
+        # flash[:notice] = "You've successfully signed up!"
+        # session[:user_id] = @user.id
+        redirect_to users_path
+      else
+        flash[:alert] = "There was a problem editing this user."
+        render :edit
+      end
+    end
+
     def create
       @user = User.new(user_params)
       if @user.save

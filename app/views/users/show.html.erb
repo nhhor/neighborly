@@ -1,0 +1,13 @@
+<h1><%= @user.user_name_first %>'s Information</h1>
+
+<h5>User Full Name:<%=@user.user_name_first%> <%=@user.user_name_last%></h5>
+
+
+<h5>User Email:<%=@user.user_email%></h5>
+
+<h5>User Zip:<%=@user.user_zip%></h5>
+
+
+<p><%= link_to "Edit this user", edit_user_path(@user) %></p>
+
+<p><%= link_to "Go back to list of users", users_path %></p>
