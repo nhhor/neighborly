@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :events, dependent: :destroy
+  # has_many :events, dependent: :destroy
   has_many :reviews
   has_and_belongs_to_many :events
 
@@ -22,5 +22,4 @@ class User < ApplicationRecord
       nil
     end
   end
-end
 end
