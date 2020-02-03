@@ -1,54 +1,53 @@
-
 class ReviewsController < ApplicationController
 
   def index
-    # Code for listing all reviews goes here.
+    @reviews = Review.all
+    render :index
   end
 
   def new
-    # Code for new review form goes here.
+    @review = Review.new
+    render :new
   end
 
   def create
-    # Code for creating a new review goes here.
+    @review = Review.new(review_params)
+    if @review.save
+      flash[:notice] = "Review successfully added!"
+      redirect_to reviews_path
+    else
+      render :new
+    end
   end
 
   def edit
-    # Code for edit review form goes here.
+    @review = Review.find(params[:id])
+    render :edit
   end
 
   def show
-    # Code for showing a single review goes here.
+    @user = User.find(params[:user_id])
+    @review = Review.find(params[:id])
+    render :show
   end
 
   def update
-    # Code for updating an review goes here.
+    @review = Review.find(params[:id])
+    if @review.update(review_params)
+      redirect_to reviews_path
+    else
+      render :edit
+    end
   end
 
   def destroy
-    # Code for deleting an review goes here.
-  end
-
-end
-
-def create
-  @review = Review.new(review_params)
-  if @review.save
+    @review = Review.find(params[:id])
+    @review.destroy
     redirect_to reviews_path
-  else
-    render :new
   end
-end
-def destroy
-   @review = Review.find(params[:id])
-   @review.destroy
-   redirect_to reviews_path
- end
-# Other controller methods go here.
 
 private
   def review_params
     params.require(:review).permit(:user_like, :user_id, :reviewer_id, :user_comments)
   end
-
 end
