@@ -2,31 +2,58 @@
 class EventsController < ApplicationController
 
   def index
-    # Code for listing all albums goes here.
+    @events = Event.all
+    render :index
   end
 
   def new
-    # Code for new album form goes here.
+    @user = User.find(params[:user_id])
+    @event = @user.events.new
   end
 
   def create
-    # Code for creating a new album goes here.
+    @user = User.find(params[:user_id])
+        @event = @user.events.new(event_params)
+    if @event.save
+       flash[:notice] = "Your Event has been created!"
+      redirect_to event_path(@user, @event)
+    else
+      flash[:alert]= "ooops!"
+      render :new
+    end
   end
 
-  def edit
-    # Code for edit album form goes here.
-  end
 
-  def show
-    # Code for showing a single album goes here.
-  end
+    def edit
+      @user = User.find(params[:user_id])
+      @event = Event.find(params[:id])
+      render :edit
+    end
 
-  def update
-    # Code for updating an album goes here.
-  end
+    def show
+      @user = User.find(params[:user_id])
+      @event = Event.find(params[:id])
+      render :show
+    end
 
-  def destroy
-    # Code for deleting an album goes here.
-  end
+    def update
+      @event = Event.find(params[:id])
+      if @event.update(event_params)
+        redirect_to event_path(@event.user)
+      else
+        render :edit
+      end
+    end
+
+    def destroy
+      @event = Event.find(params[:id])
+      @event.destroy
+      redirect_to event_path(@event.user)
+    end
+    private
+
+def review_params
+  params.require(:event).permit(:event_name, :event_date, :event_time, :event_address, :event_zip, :event_city, :event_state, :event_description, :event_age_min, :event_category, :event_min_seats, :event_max_seats, :user_id  )
+end
 
 end
