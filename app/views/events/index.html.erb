@@ -4,7 +4,7 @@
       <h1><%= link_to event.event_name, event_path(event) %></h1>
       <ul>
         <li>WHEN:<%= event.event_date %> at <%= event.event_time %></li>
-s
+
       <li>WHERE:<%= event.event_address %>,<%= event.event_city %>, <%= event.event_state %>, <%= event.event_zip %></li>
       <li>AGE REQUIREMENT: <%= event.event_age_min %>+ </li>
       <p>DESCRIPTION: <%= event.event_description %></p>

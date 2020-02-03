@@ -1,11 +1,26 @@
-<% if @events.any? %>
-  <ul>
-    <% @events.each do |event| %>
-      <li><%= event.name %></li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>There are currently no records to display.</p>
-<% end %>
+<h1><%= @event.event_name %></h1>
+<h3><%= @user.events.user_email %></h3>
+  <h3><%= @event.event_address %>,<%= @event.event_city %>, <%= @event.event_state %>, <%= @event.event_zip %></h3>
+  <h5><%= @event.event_date %> at <%= @event.event_time %></h5>
+<p><%= link_to "Edit", edit_event_path(@event) %></p>
+<p><%= link_to "Delete", event_path(@event),
+                         :data => {:confirm => "You sure?",
+                                   :method => "delete"} %></p>
 
-<a href="/events/new">Add a new album</a>
+<p><%= link_to "EVENTS", events_path %></p>
+
+<% if @users.any? %>
+  <h1>Users Attending</h1>
+    <ul>
+      <% @users.each do |person| %>
+        <li><%= person.user_name %> </li>
+        <% if @users.reviews.any? %>
+              <% @users.reviews.each do |rating| %>
+                <li><%= rating.user_like.count %> </li>
+                <% if @comments.any? %>
+                      <% @comments.each do |comment| %>
+                        <p><%= comment.user_comment %> </p>
+                <% end %>
+        <% end %>
+<% end %>
+    </ul>
