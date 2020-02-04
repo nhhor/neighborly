@@ -1,9 +1,16 @@
 
 class EventsController < ApplicationController
   before_action :authorize, only: [:new, :create, :edit, :update, :destroy]
-  def index
 
-    @events = Event.all
+  def index
+    if params["search"]
+
+      @events = Event.where(:event_zip => params["search"])
+  
+      flash[:notice] = "You!"
+    else
+      @events = Event.all
+    end
     render :index
   end
 
@@ -14,12 +21,14 @@ class EventsController < ApplicationController
     @event =  Event.new
   end
 
+
+
   def create
     @id = current_user.id
 
     @user = User.find(@id)
         @event = Event.new(event_params)
-        
+
     if @event.save
        flash[:notice] = "Your Event has been created!"
       redirect_to event_path(@id, @event)
@@ -72,8 +81,8 @@ class EventsController < ApplicationController
     @event.destroy
     redirect_to event_path(@event.user)
   end
-  
-  
+
+
 private
 
 def event_params

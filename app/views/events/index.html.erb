@@ -1,6 +1,12 @@
+
+<%= render "layouts/search_form" %>
 <h1><%= link_to "Create an Event", new_event_path %></h1>
+
+
+
 <% if @events.any? %>
     <% @events.each do |event| %>
+
 
       <h1><%= link_to event.event_name, event_path(event) %></h1>
       <ul>
