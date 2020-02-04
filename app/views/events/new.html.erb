@@ -9,8 +9,10 @@
 <%= f.time_field :event_time %>
 <%= f.label "Description" %>
 <%= f.text_field :event_description %>
-<%= f.label "Category" %>
-<%= f.text_field :event_category %>
+
+
+<%= f.select(:event_category, options_for_select([['Party', 1], ['Games', 2], ['Movie', 3], ['Child-Friendly', 4], ['Study-Group', 5]])) %>
+
 <%= f.label "Street address" %>
 <%= f.text_field :event_address %>
 <%= f.label "City" %>
