@@ -19,10 +19,11 @@ class EventsController < ApplicationController
 
     @user = User.find(@id)
         @event = Event.new(event_params)
-        
+
     if @event.save
        flash[:notice] = "Your Event has been created!"
-      redirect_to event_path(@id, @event)
+      # redirect_to event_path(@id, @event)
+      redirect_to event_path(@event)
 
     else
       flash[:alert]= "ooops!"
@@ -70,10 +71,11 @@ class EventsController < ApplicationController
   def destroy
     @event = Event.find(params[:id])
     @event.destroy
-    redirect_to event_path(@event.user)
+    # redirect_to event_path(@event.user)
+    redirect_to events_path
   end
-  
-  
+
+
 private
 
 def event_params
