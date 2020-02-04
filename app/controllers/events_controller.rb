@@ -52,13 +52,36 @@ class EventsController < ApplicationController
 
       @user = User.find(@id)
       @event = Event.find(params[:id])
+      @signedup_user_ids = []
+      @signedup_user_names = []
+
+      # Trying to get all of the people who have signed up for a given event
+
+      # @signedup = User.joins(:events_user).where(:events_users => {:event_id => @event.id})
+
+      # @signedup = User.joins(:event).where(:events_users => {:event_id => @event.id})
+
+      sql = "select * from events_users where event_id = #{@event.id};"
+      @signedup = ActiveRecord::Base.connection.execute(sql)
+      @signedup.each do |person| @signedup_user_ids.push(person.values[0]) end
+      @signedup_user_ids.each do |id| @signedup_user_names.push(User.find(id).user_name_first) end 
+
+
+
+
+
+
+      # @test = @event.user
+
+      binding.pry
+
       render :show
     end
 
-  def show
-    @event = Event.find(params[:id])
-    render :show
-  end
+  # def show
+  #   @event = Event.find(params[:id])
+  #   render :show
+  # end
 
   def update
     @event = Event.find(params[:id])
