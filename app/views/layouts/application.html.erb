@@ -1,29 +1,36 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Neighborly</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>Neighborly</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-<br><br><br><br>
-
+<body>
+  <div class="header">
+    <%= image_tag("neighborly_logo_house.png", class: "NBanner", alt: "Neighborly Logo") %>
+    <br>
     <% if current_user %>
-   Welcome back, <%= current_user.user_email %> | <%= link_to "Sign out", '/signout' %>
- <% else %>
-   <%= link_to "Sign up", signup_path %> | <%= link_to "Sign in", '/signin' %>
- <% end %>
-<div class="flash_messages">
-  <%= flash[:alert] %>
-  <%= flash[:notice] %>
+    Welcome back, <%= current_user.user_email %> | <%= link_to "Sign out", '/signout' %>
+    <% else %>
+    <%= link_to "Sign up", signup_path %> | <%= link_to "Sign in", '/signin' %>
+    <% end %>
+    <br><br><br><br>
+    <div class="flash_messages">
+      <%= flash[:alert] %>
+      <%= flash[:notice] %>
+    </div>
+  </div>
+  <br><br><br><br>
 
-</div>
 
 
-    <%= yield %>
-  </body>
+  <%= yield %>
+  <div class="driveby">
+<br>
+  </div>
+</body>
 </html>
