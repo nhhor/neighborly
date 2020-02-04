@@ -1,5 +1,6 @@
 <h1> Create Event </h1>
-<%= form_for [@user, @event ] do |f| %>
+<%= form_for [ @event ] do |f| %>
+<%= f.hidden_field :user_id, :value => @id %>
 <%= f.label "Name your Event" %>
 <%= f.text_field :event_name %>
 <%= f.label "Date" %>
@@ -7,7 +8,7 @@
 <%= f.label "Time" %>
 <%= f.time_field :event_time %>
 <%= f.label "Description" %>
-<%= f.text_area :event_description, size: "60x12" %>
+<%= f.text_field :event_description %>
 <%= f.label "Category" %>
 <%= f.text_field :event_category %>
 <%= f.label "Street address" %>
@@ -17,7 +18,7 @@
 <%= f.label "State" %>
 <%= f.text_field :event_state %>
 <%= f.label "Zip Code" %>
-<%= f.number_field(:event_zip, in: 03045..03100, step: 1.0) %>
+<%= f.number_field(:event_zip, in: 97201..97299, step: 1.0) %>
 <%= f.label "Age Requirement" %>
 <%= f.number_field(:event_age_min, in: 0..100, step: 1.0) %>
 <%= f.label "Minimum People Allowed to Attend" %>
