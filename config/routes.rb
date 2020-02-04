@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   end
 
   resources :users do
+    member do
+      post :remove
+    end 
     resources :reviews
 
   end
