@@ -1,5 +1,18 @@
 <form action="/" method="get">
-  <label for="search">Search: </label>
-  <input type="text" name="search">
+
+    <label for="search_category">Search by Category: </label>
+  <select name="search_category">
+  <option value="1">Party</option>
+  <option value="2">Games</option>
+  <option value="3">Movie</option>
+  <option value="4">Child-Friendly</option>
+  <option value="5">Study-Group</option>
+</select>
+  <button type="submit">Go</button>
+</form>
+<form action="/" method="get">
+  <label for="search">Search by Zipcode: </label>
+  <input type="text" name="search" default="<%= session[:user_zip] %> ">
+
   <button type="submit">Go</button>
 </form>

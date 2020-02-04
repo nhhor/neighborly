@@ -5,12 +5,19 @@ class EventsController < ApplicationController
   def index
     if params["search"]
       @events = Event.where(:event_zip => params["search"])
+
       else
+
       @events = Event.all
     end
+    if params["search_category"]
+
+      @events_by_category = Event.where(:event_category => params["search_category"])
+
+      flash[:notice] = "You!"
     render :index
   end
-
+end
   def new
     @id = current_user.id
 
