@@ -19,10 +19,11 @@ class EventsController < ApplicationController
 
     @user = User.find(@id)
         @event = Event.new(event_params)
-        
+
     if @event.save
        flash[:notice] = "Your Event has been created!"
-      redirect_to event_path(@id, @event)
+      # redirect_to event_path(@id, @event)
+      redirect_to event_path(@event)
 
     else
       flash[:alert]= "ooops!"
@@ -51,13 +52,16 @@ class EventsController < ApplicationController
 
       @user = User.find(@id)
       @event = Event.find(params[:id])
+      @signedup_user_ids = []
+      @signedup_user_names = []
+      sql = "select * from events_users where event_id = #{@event.id};"
+      @signedup = ActiveRecord::Base.connection.execute(sql)
+      @signedup.each do |person| @signedup_user_ids.push(person.values[0]) end
+      @signedup_user_ids.each do |id| @signedup_user_names.push(User.find(id).user_name_first) end
       render :show
     end
 
-  def show
-    @event = Event.find(params[:id])
-    render :show
-  end
+
 
   def update
     @event = Event.find(params[:id])
@@ -70,10 +74,11 @@ class EventsController < ApplicationController
   def destroy
     @event = Event.find(params[:id])
     @event.destroy
-    redirect_to event_path(@event.user)
+    # redirect_to event_path(@event.user)
+    redirect_to events_path
   end
-  
-  
+
+
 private
 
 def event_params

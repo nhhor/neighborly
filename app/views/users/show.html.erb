@@ -11,3 +11,21 @@
 <p><%= link_to "Edit this user", edit_user_path(@user) %></p>
 
 <p><%= link_to "Go back to list of users", users_path %></p>
+
+
+<%if @user.events.any?%>
+
+<h3><%= @user.user_name_first %> has signed up for these events: </h3>
+<ul>
+  <%@user.events.each do |event| %>
+
+  <li> <%=event.event_name %></li>
+  <% end %>
+
+</ul>
+
+<% else %>
+
+<p>This user has not signed up for any events</p>
+
+<% end %>

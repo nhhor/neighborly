@@ -1,8 +1,8 @@
 <h1><%= @event.event_name %></h1>
 
 <h3>Created by: <%= @event.user.user_email %></h3>
-  <h3><%= @event.event_address %> <%= @event.event_city %>, <%= @event.event_state %> <%= @event.event_zip %></h3>
-  <h5><%= @event.event_date %> at <%= @event.event_time %></h5>
+<h3><%= @event.event_address %> <%= @event.event_city %>, <%= @event.event_state %> <%= @event.event_zip %></h3>
+<h5><%= @event.event_date %> at <%= @event.event_time %></h5>
 <p><%= link_to "Edit", edit_event_path(@event) %></p>
 <p><%= link_to "Delete", event_path(@event),
   :data => {:confirm => "You sure?",
@@ -12,4 +12,28 @@
     :data => {:confirm => "Are you sure?",
     :method => "add"} %></p>
 
-<p><%= link_to "More Events", events_path %></p>
+    <p><%= link_to "More Events", events_path %></p>
+
+
+    <% if @event.user_id == current_user.id %>
+
+    <p><%= link_to "Delete Event", event_path(@event),
+      :data => {:confirm => "Are you sure?",
+      :method => "delete"} %></p>
+
+      <% else %>
+      <p> </p>
+      <% end %>
+
+      <% if @signedup_user_names.any? %>
+      <ul>
+        <%  @signedup_user_names.each do |name| %>
+        <li><%=name %></li>
+        <% end %>
+      </ul>
+
+      <% else %>
+
+      <p>There is no one signed up for this event yet. Be the first!</p>
+
+      <% end %>
