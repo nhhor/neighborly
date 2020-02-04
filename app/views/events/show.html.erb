@@ -8,9 +8,13 @@
   :data => {:confirm => "You sure?",
   :method => "delete"} %></p>
 
+  <% if @alreadyjoined.values.empty? == true %>
+
   <p><%= link_to "Join Event", add_event_path(@event),
     :data => {:confirm => "Are you sure?",
     :method => "add"} %></p>
+
+      <% end %>
 
     <p><%= link_to "More Events", events_path %></p>
 
