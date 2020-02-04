@@ -16,3 +16,9 @@
 
   <button type="submit">Go</button>
 </form>
+<form action="/" method="get">
+  <label for="search">Search by Zipcode: </label>
+  <input type="number" name="search" min="<%= (@user_zip) - 2 %>" max="<%= (@user_zip) + 3 %>">
+
+  <button type="submit">Go</button>
+</form>
