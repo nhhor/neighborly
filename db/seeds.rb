@@ -28,7 +28,7 @@
       event_state: Faker::Address.state,
       event_description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: true),
       event_age_min: 21,
-      event_category: 'dinner',
+      event_category: Faker::Number.between(from: 1, to: 5),
       event_min_seats: 2,
       event_max_seats: 10,
       user_id: user.id
