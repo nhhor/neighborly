@@ -25,4 +25,15 @@
       <p> </p>
       <% end %>
 
-      <!-- <p>Trying to show all of the people singned up for this event (not working yet)</p> -->
+      <% if @signedup_user_names.any? %>
+      <ul>
+        <%  @signedup_user_names.each do |name| %>
+        <li><%=name %></li>
+        <% end %>
+      </ul>
+
+      <% else %>
+
+      <p>There is no one signed up for this event yet. Be the first!</p>
+
+      <% end %>
