@@ -12,7 +12,7 @@
 </form>
 <form action="/" method="get">
   <label for="search">Search by Zipcode: </label>
-  <input type="text" name="search" default="<%= session[:user_zip] %> ">
+  <input type="text" name="search" value="<%= @user_zip %>">
 
   <button type="submit">Go</button>
 </form>
