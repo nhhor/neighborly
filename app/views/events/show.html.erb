@@ -28,7 +28,7 @@
       <% if @signedup_user_names.any? %>
       <ul>
         <%  @signedup_user_names.each do |name| %>
-        <li><%=name %></li>
+        <li><%= link_to name, user_path(User.find_by(user_name_first: name))  %></li>
         <% end %>
       </ul>
 
