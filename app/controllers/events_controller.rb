@@ -4,11 +4,8 @@ class EventsController < ApplicationController
 
   def index
     if params["search"]
-
       @events = Event.where(:event_zip => params["search"])
-  
-      flash[:notice] = "You!"
-    else
+      else
       @events = Event.all
     end
     render :index
