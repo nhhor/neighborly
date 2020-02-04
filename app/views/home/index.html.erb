@@ -6,7 +6,7 @@
   </div>
 
 
-
+    <%= render "layouts/search_form" %>
 
 
 <% if @events.any? %>
@@ -21,6 +21,7 @@
       <li>DESCRIPTION: <%= event.event_description %></li>
     </ul>
     <% end %>
+
 <% else %>
   <p>There are no events.</p>
 <% end %>
