@@ -39,6 +39,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # ~ ADDED BELOW GEM ~
 gem 'jquery-rails'
 gem 'faker'
+gem 'bootstrap-sass'
+gem 'sassc-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
