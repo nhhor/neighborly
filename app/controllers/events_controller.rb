@@ -6,7 +6,7 @@ class EventsController < ApplicationController
     if params["search"]
 
       @events = Event.where(:event_zip => params["search"])
-  
+
       flash[:notice] = "You!"
     else
       @events = Event.all
@@ -67,6 +67,11 @@ class EventsController < ApplicationController
       @signedup = ActiveRecord::Base.connection.execute(sql)
       @signedup.each do |person| @signedup_user_ids.push(person.values[0]) end
       @signedup_user_ids.each do |id| @signedup_user_names.push(User.find(id).user_name_first) end
+
+
+    #not allowing the user to join multiple times
+      sql2 = "select * from events_users where user_id = #{@id} and event_id = #{@event.id};"
+      @alreadyjoined= ActiveRecord::Base.connection.execute(sql2)
       render :show
     end
 
