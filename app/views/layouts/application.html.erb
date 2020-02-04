@@ -7,46 +7,58 @@
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link rel="stylesheet" href="app/assets/stylesheets/styles.scss">
 </head>
 
 <body>
+
   <div class="header">
+    <!-- Bird HTML -->
+    <div class="bird-container bird-container--one">
+      <div class="bird bird--one"></div>
+    </div>
+    <div class="bird-container bird-container--two">
+      <div class="bird bird--two"></div>
+    </div>
+
+
     <%= image_tag("neighborly_logo_house.png", class: "NBanner", alt: "Neighborly Logo") %>
-    <br>
-    <% if current_user %>
-    Welcome back, <%= current_user.user_email %> | <%= link_to "Sign out", '/signout' %>
-    <% else %>
-    <%= link_to "Sign up", signup_path %> | <%= link_to "Sign in", '/signin' %>
-    <% end %>
-    <br><br><br><br>
+
+    <div class="nav_bar">
+      <% if current_user %>
+      <h3>Welcome back, <%= current_user.user_email %> | <%= link_to "Sign out", '/signout', class: "btn btn-danger" %></h3>
+      <% else %>
+      <%= link_to "Sign up", signup_path, class: "btn btn-success" %> | <%= link_to "Sign in", '/signin', class: "btn btn-info" %>
+      <% end %>
+
+      <a href="/">Home</a> | <%= render "layouts/search_form" %>
+    </div>
+
+    <br><br>
+
     <div class="flash_messages">
       <%= flash[:alert] %>
       <%= flash[:notice] %>
     </div>
+
   </div>
-  <br><br><br><br>
+    <br><br><br><br><br><br>
 
 
 
-  <%= yield %>
-  <!-- Bird HTML -->
-  <div class="bird-container bird-container--one">
-		<div class="bird bird--one"></div>
-	</div>
+    <%= yield %>
 
-	<div class="bird-container bird-container--two">
-		<div class="bird bird--two"></div>
-	</div>
 
-	<div class="bird-container bird-container--three">
-		<div class="bird bird--three"></div>
-	</div>
 
-	<div class="bird-container bird-container--four">
-		<div class="bird bird--four"></div>
-	</div>
   <div class="driveby">
-<br>
+    <!-- Bird HTML -->
+    <div class="bird-container bird-container--three">
+      <div class="bird bird--three"></div>
+    </div>
+    <div class="bird-container bird-container--four">
+      <div class="bird bird--four"></div>
+    </div>
+    <br>
   </div>
 </body>
 </html>

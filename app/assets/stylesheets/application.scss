@@ -1,5 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "main_styles";
+@import "button_styles";
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -11,7 +13,6 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- *
  */
 
 body {
@@ -19,15 +20,31 @@ body {
 
 }
 
+.nav_bar {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: white;
+}
 
-.top h1 {
-  font-size: 150px;
+.welcome {
+  // position: absolute;
+  // top: 25%;
+  padding-top: 10%;
+  overflow: hidden;
+  // left: 25vw;
+  width: 100vw;
+  height: 80vh;
+}
+
+.welcome h1 {
+  font-size: 120px;
   text-align: center;
 }
 
-.top h3 {
+.welcome h3 {
   text-align: center;
-  font-size: 75px;
+  font-size: 60px;
 
 }
 
@@ -35,6 +52,7 @@ body {
   position: fixed;
   top: 0px;
   right: 0px;
+  background-color: white;
 }
 
 .header {
@@ -48,8 +66,6 @@ body {
   width: 100vw;
   height: 10vh;
 }
-
-
 
 
 
@@ -151,7 +167,7 @@ body {
 
      .bird-container {
      	position: absolute;
-     	top: 20%;
+     	bottom: 40%;
      	left: -10%;
      	transform: scale(0) translateX(-10vw);
      	will-change: transform;
