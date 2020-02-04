@@ -23,10 +23,11 @@ class EventsController < ApplicationController
   end
 
   def add
-    @user_to_add = current_user.id
+    # @user_to_add = current_user.id
+    @user = User.find(session[:user_id])
     # event = Event.where(employee_name: params[:employee].fetch("employee")).first
     @event = Event.find(params[:id])
-    @event.users << @user_to_add
+    @user.events << @event
     redirect_to event_path(@event)
 
   end

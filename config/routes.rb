@@ -6,7 +6,13 @@ Rails.application.routes.draw do
   get '/signin' => 'sessions#new'
   post '/signin' => 'sessions#create'
   get '/signout' => 'sessions#destroy'
-  resources :events
+  resources :events do
+    member do
+      post :add
+
+    end
+
+  end
   resources :users do
     resources :reviews
 
