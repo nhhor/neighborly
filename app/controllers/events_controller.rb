@@ -12,9 +12,9 @@ class EventsController < ApplicationController
   end
 
   def create
-        @event = Event.new(event_params)
+    @event = Event.new(event_params)
     if @event.save
-       flash[:notice] = "Your Event has been created!"
+      flash[:notice] = "Your Event has been created!"
       redirect_to event_path(@user, @event)
     else
       flash[:alert]= "ooops!"
@@ -32,6 +32,7 @@ class EventsController < ApplicationController
 
   end
 
+
     def edit
       @event = Event.find(params[:id])
       render :edit
@@ -45,24 +46,28 @@ class EventsController < ApplicationController
       render :show
     end
 
-    def update
-      @event = Event.find(params[:id])
-      if @event.update(event_params)
-        redirect_to event_path(@event.user)
-      else
-        render :edit
-      end
-    end
+  def show
+    @event = Event.find(params[:id])
+    render :show
+  end
 
-    def destroy
-      @event = Event.find(params[:id])
-      @event.destroy
+  def update
+    @event = Event.find(params[:id])
+    if @event.update(event_params)
       redirect_to event_path(@event.user)
+    else
+      render :edit
     end
-    private
+  end
 
-def review_params
-  params.require(:event).permit(:event_name, :event_date, :event_time, :event_address, :event_zip, :event_city, :event_state, :event_description, :event_age_min, :event_category, :event_min_seats, :event_max_seats, :user_id  )
-end
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+    redirect_to event_path(@event.user)
+  end
+  private
 
+  def review_params
+    params.require(:event).permit(:event_name, :event_date, :event_time, :event_address, :event_zip, :event_city, :event_state, :event_description, :event_age_min, :event_category, :event_min_seats, :event_max_seats, :user_id  )
+  end
 end

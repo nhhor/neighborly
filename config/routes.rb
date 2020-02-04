@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'events#index'
+  root to: 'home#index'
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
 
