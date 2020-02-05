@@ -16,3 +16,12 @@
 
   <button type="submit">Go</button>
 </form>
+<form action="/" method="get">
+    <label for="search_range">Select Range: </label>
+  <select name="search_range">
+  <option value="<%= (@user_zip) + 2 %>">1 mile radius</option>
+  <option value="<%= (@user_zip) + 5 %>">3 mile radius</option>
+  <option value="<%= (@user_zip) + 10 %>">5 mile radius</option>
+</select>
+  <button type="submit">Go</button>
+</form>
