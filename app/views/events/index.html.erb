@@ -1,5 +1,5 @@
 <br><br>
-<h1><%= link_to "Create an Event", new_event_path %></h1>
+<h1><%= link_to "Create an Event", new_event_path, class: "btn btn-lg btn-success" %></h1>
 
 <% if @events.any? %>
     <% @events.each do |event| %>

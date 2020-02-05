@@ -38,6 +38,6 @@
   <%= f.label "Maximum People Allowed to Attend", class: 'event_form_labels' %>
   <%= f.number_field(:event_max_seats, in: 1..1000, step: 1.0, class: 'event_form_inputs') %>
 
-  <%= f.submit "Create", class: 'event_form_button' %>
+  <div id="create_event_button"><%= f.submit "Create", class: 'event_form_button' %></div>
   <% end %>
 </div>

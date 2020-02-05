@@ -23,11 +23,35 @@ body {
 
 }
 
+
+.search_form {
+  color: black;
+  margin-left: 25%;
+  margin-right: 25%;
+  max-width: 850px;
+  background-color: #E6F9D0 ;
+  border: thick solid #D8F2BB;
+  border-radius: 20px;
+  // width: 50%;
+  margin-top: 15px;
+  // margin:100px;
+  box-shadow: 5px 10px 10px grey;
+  text-align: center;
+ // z-index: 1;
+}
+
+.search_form_center {
+  display: inline-block;
+
+}
+
+
 .nav_bar {
   position: absolute;
   top: 10px;
   left: 10px;
   color: green;
+  width: 100vw;
 }
 
 .welcome {
