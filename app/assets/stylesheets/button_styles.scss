@@ -173,11 +173,21 @@ $borderW: 2px;
 // NAV BAR STYLES
 .nav_event_button, .nav_signin_button, .nav_signup_button, .nav_signout_button, .create_event_button{
 	background-color: navy;
-	color: white;
+  font-family: 'Sigmar One', cursive;
 	padding: 10px;
-	font-size: 10pt;
+	font-size: 15pt;
 	box-shadow: 5px 5px 8px black;
 	border-radius: 50px;
   border: none;
 
+}
+.nav_signin_button{
+
+	color:#6BFA6B;
+}
+.nav_signout_button{
+	color:#FB0413;
+}
+.nav_signup_button{
+	color:#FBEC04;
 }
