@@ -45,21 +45,15 @@
   </div>
     <br><br><br><br><br><br>
 
-
-
     <%= yield %>
 
 
-
-  <div class="driveby">
-    <!-- Bird HTML -->
-    <div class="bird-container bird-container--three">
-      <div class="bird bird--three"></div>
-    </div>
-    <div class="bird-container bird-container--four">
-      <div class="bird bird--four"></div>
-    </div>
-    <br>
+  <div>
+    <% if current_user %>
+    <%= render "layouts/driveby_small" %>
+    <% else %>
+    <%= render "layouts/driveby_large" %>
+    <% end %>
   </div>
 </body>
 </html>
