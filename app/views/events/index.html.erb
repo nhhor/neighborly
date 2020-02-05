@@ -1,5 +1,5 @@
-
-<h1><%= link_to "Create an Event", new_event_path %></h1>
+<br><br>
+<h1><%= link_to "Create an Event", new_event_path, class: "btn btn-lg btn-success" %></h1>
 
 <% if @events.any? %>
     <% @events.each do |event| %>
@@ -12,6 +12,7 @@
         <li>WHERE: <%= event.event_address %>,<%= event.event_city %>, <%= event.event_state %>, <%= event.event_zip %></li>
         <li>AGE REQUIREMENT: <%= event.event_age_min %>+ </li>
       <li>DESCRIPTION: <%= event.event_description %></li>
+      <li>Category <%= event.event_category%></li>
     </ul>
     <% end %>
 <% else %>

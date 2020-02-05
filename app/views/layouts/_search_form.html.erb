@@ -1,31 +1,31 @@
 <div class="search_form">
-<form action="/" method="get">
-  <label for="search_category">Search by Category: </label>
-  <select name="search_category">
-    <option value="1">Party</option>
-    <option value="2">Games</option>
-    <option value="3">Movie</option>
-    <option value="4">Child-Friendly</option>
-    <option value="5">Study-Group</option>
-  </select>
-  <button class= "submit_form_button" type="submit">Go</button>
-</form>
-</div>
-<div class="search_form">
-  <form action="/" method="get">
-    <label for="search">Search by Zipcode: </label>
-    <input type="text" name="search" value="<%= @user_zip %>">
-    <button class= "submit_form_button" type="submit">Go</button>
-  </form>
-</div>
-<div class="search_form">
-  <form action="/" method="get">
+
+  <form action="/events" method="get">
+    <div class="search_form_center">
+
+    <label for="search_zip">Search by Zipcode: </label>
+    <input type="text" name="search_zip" value="<%= @user_zip %>" required>
+
+
     <label for="search_range">Select Range: </label>
     <select name="search_range">
-      <option value="<%= (@user_zip)  %>">1 mile radius</option>
-      <option value="<%= (@user_zip)  %>">3 mile radius</option>
-      <option value="<%= (@user_zip)  %>">5 mile radius</option>
+      <option value="<%= 5 %>">3 mile radius</option>
+      <option value="<%= 10 %>">6 mile radius</option>
+      <option value="<%= 15 %>">9 mile radius</option>
     </select>
-    <button class= "submit_form_button" type="submit">Go</button>
+
+    <label for="search_category">Search by Category: </label>
+    <select name="search_category">
+      <option value="All">All</option>
+      <option value="Party">Party</option>
+      <option value="Games">Games</option>
+      <option value="Movie">Movie</option>
+      <option value="Child-Friendly">Child-Friendly</option>
+      <option value="Study Group">Study-Group</option>
+    </select>
+
+    <button class= "submit_form_button btn btn-info" type="submit">Go</button>
+
+  </div>
   </form>
 </div>

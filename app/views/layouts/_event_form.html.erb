@@ -1,0 +1,43 @@
+<div class="new_event_form">
+  <h1> Create Event </h1>
+  <%= form_for @event, html: {class: "event_form_tags" }  do |f| %>
+  <%= f.hidden_field :user_id, :value => @id %>
+<%= f.label "Select a Category", class: 'event_form_labels' %>
+  <%= f.select(:event_category, options_for_select([['Party', 1 ], ['Games', 2], ['Movie', 3], ['Child-Friendly', 4], ['Study-Group', 5]]), {}, { :class => 'event_form_category_drop_downs'}) %>
+  <%= f.label "Name your Event", class: 'event_form_labels' %>
+  <%= f.text_field :event_name, class: 'event_form_inputs' %>
+
+  <%= f.label "Date", class: 'event_form_labels' %>
+  <%= f.date_field :event_date, class: 'event_form_inputs' %>
+
+  <%= f.label "Time", class: 'event_form_labels' %>
+  <%= f.time_field :event_time, class: 'event_form_inputs' %>
+
+  <%= f.label "Description", class: 'event_form_labels' %>
+  <%= f.text_area :event_description, class: 'event_form_inputs' %>
+
+
+  <%= f.label "Street address", class: 'event_form_labels' %>
+  <%= f.text_field :event_address, class: 'event_form_inputs' %>
+
+  <%= f.label "City", class: 'event_form_labels' %>
+  <%= f.text_field :event_city, class: 'event_form_inputs' %>
+
+  <%= f.label "State", class: 'event_form_labels' %>
+  <%= f.text_field :event_state, class: 'event_form_inputs' %>
+
+  <%= f.label "Zip Code", class: 'event_form_labels' %>
+  <%= f.number_field(:event_zip, in: 97201..97299, step: 1.0, class: 'event_form_inputs') %>
+
+  <%= f.label "Age Requirement", class: 'event_form_labels' %>
+  <%= f.number_field(:event_age_min, in: 0..100, step: 1.0, class: 'event_form_inputs') %>
+
+  <%= f.label "Minimum People Allowed to Attend", class: 'event_form_labels' %>
+  <%= f.number_field(:event_min_seats, in: 0..1000, step: 1.0, class: 'event_form_inputs') %>
+
+  <%= f.label "Maximum People Allowed to Attend", class: 'event_form_labels' %>
+  <%= f.number_field(:event_max_seats, in: 1..1000, step: 1.0, class: 'event_form_inputs') %>
+
+  <div id="create_event_button"><%= f.submit "Create", class: 'event_form_button' %></div>
+  <% end %>
+</div>

@@ -26,13 +26,19 @@
 
     <div class="nav_bar">
       <% if current_user %>
-      <h3>Welcome back, <%= current_user.user_email %> | <%= link_to "Sign out", '/signout', class: "btn btn-danger" %></h3>
+      <h3>Welcome back, <%= current_user.user_email %> | <%= link_to "Sign out", '/signout', class: "btn btn-danger" %>  | <a href="/events" class="btn btn-info">All Events</a></h3>
       <% else %>
       <%= link_to "Sign up", signup_path, class: "btn btn-success" %> | <%= link_to "Sign in", '/signin', class: "btn btn-info" %>
       <% end %>
 
 
-      <a href="/events" class="btn btn-info">Events</a> | <%= render "layouts/search_form" %>
+
+
+      <% if session["user_id"] != nil %>
+      <%= render "layouts/search_form" %>
+      <% end %>
+
+
     </div>
 
     <br><br><br><br><br><br>
@@ -45,21 +51,15 @@
   </div>
     <br><br><br><br><br><br>
 
-
-
     <%= yield %>
 
 
-
-  <div class="driveby">
-    <!-- Bird HTML -->
-    <div class="bird-container bird-container--three">
-      <div class="bird bird--three"></div>
-    </div>
-    <div class="bird-container bird-container--four">
-      <div class="bird bird--four"></div>
-    </div>
-    <br>
+  <div>
+    <% if current_user %>
+    <%= render "layouts/driveby_small" %>
+    <% else %>
+    <%= render "layouts/driveby_large" %>
+    <% end %>
   </div>
 </body>
 </html>

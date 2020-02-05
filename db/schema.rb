@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2020_02_04_220008) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "event_category"
+    t.string "event_category"
   end
 
   create_table "events_users", id: false, force: :cascade do |t|
