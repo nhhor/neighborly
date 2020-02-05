@@ -7,16 +7,26 @@ class EventsController < ApplicationController
       @user_zip = User.find(session["user_id"]).user_zip
     end
 
-    if params["search"]
-      @events = Event.where(:event_zip => params["search"])
-    else
+    if params["search_zip"]
 
+      search_zip = params["search_zip"]
+      search_category = params["search_category"]
+      search_range = params["search_range"]
+
+      zip_code_array = []
+      response = HTTParty.get("https://api.promaptools.com/service/us/zips-inside-radius/get/?radius=#{search_range}&zip=#{search_zip}&showcity=true&showstate=true&key=" + ENV["PMT_API_KEY"])
+      if params["search_category"] == "All"
+        zip_codes = response["output"].each{|index| zip_code_array.push(index["zip"])}
+        zip_list = zip_code_array.join(" OR event_zip = ")
+        @events = Event.where("event_zip = #{zip_list}")
+      else
+        zip_codes = response["output"].each{|index| zip_code_array.push("event_zip = #{index["zip"]}" + " AND event_category = '#{search_category}'")}
+        zip_list = zip_code_array.join(" OR ")
+        # binding.pry
+        @events = Event.where(zip_list)
+      end
+    else
       @events = Event.all
-    end
-    if params["search_category"]
-      @events_by_category = Event.where(:event_category => params["search_category"])
-      flash[:notice] = "You!"
-      render :index
     end
   end
 
@@ -76,11 +86,11 @@ class EventsController < ApplicationController
 
 
 
-    #not allowing the user to join multiple times
-      sql2 = "select * from events_users where user_id = #{@id} and event_id = #{@event.id};"
-      @alreadyjoined= ActiveRecord::Base.connection.execute(sql2)
-      render :show
-    end
+        #not allowing the user to join multiple times
+        sql2 = "select * from events_users where user_id = #{@id} and event_id = #{@event.id};"
+        @alreadyjoined= ActiveRecord::Base.connection.execute(sql2)
+        render :show
+      end
 
 
 

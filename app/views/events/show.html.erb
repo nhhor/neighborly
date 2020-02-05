@@ -3,6 +3,8 @@
 <h3>Created by: <%= @event.user.user_email %></h3>
 <h3><%= @event.event_address %> <%= @event.event_city %>, <%= @event.event_state %> <%= @event.event_zip %></h3>
 <h5><%= @event.event_date %> at <%= @event.event_time %></h5>
+
+<h5> <%= @event.event_category%> </h5>
 <p><%= link_to "Edit", edit_event_path(@event) %></p>
 <p><%= link_to "Delete", event_path(@event),
   :data => {:confirm => "You sure?",
