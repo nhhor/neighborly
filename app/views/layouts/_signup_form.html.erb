@@ -1,0 +1,22 @@
+<div class="signup_form">
+
+  <h1> Sign up</h1>
+  <%= form_for @user do |f| %>
+    <%= f.label "Email", class:'signup_form_labels' %>
+    <%= f.text_field :user_email, class: 'signup_form_inputs' %>
+    <%= f.label "First Name", class:'signup_form_labels' %>
+    <%= f.text_field :user_name_first, class: 'signup_form_inputs' %>
+    <%= f.label "Last Name", class:'signup_form_labels' %>
+    <%= f.text_field :user_name_last, class: 'signup_form_inputs' %>
+    <%= f.label "Zip Code", class:'signup_form_labels' %>
+    <%= f.text_field :user_zip, class: 'signup_form_inputs' %>
+    <%= f.label "Password", class:'signup_form_labels' %>
+    <%= f.password_field :password, class: 'signup_form_inputs' %>
+    <%= f.label :password_confirmation, class: 'signup_form_labels' %>
+    <%= f.password_field :password_confirmation, class: 'signup_form_inputs' %>
+    <div id="new_signup_button">
+
+    </div>
+    <%= f.submit "Sign Up", class: 'signup_form_button' %>
+  <% end %>
+</div>

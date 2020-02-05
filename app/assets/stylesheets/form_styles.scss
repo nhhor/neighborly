@@ -1,16 +1,16 @@
-.new_event_form {
+.new_event_form, .signup_form {
 background-color: #E6F9D0 ;
 border: thick solid #D8F2BB;
 border-radius: 20px;
 padding: 40px;
 margin:100px;
 padding-bottom: 100px;
-box-shadow: 5px 10px 10px grey;
+box-shadow: 10px 15px 20px #40403F;
 position: absolute;
 z-index: 1;
 }
 
-.new_event_form h1{
+.new_event_form h1, .signup_form h1{
   background-color: #D8F2BB;
   padding: 20px;
   margin-left: -42px;
@@ -21,16 +21,16 @@ z-index: 1;
   border-top-right-radius: 20px;
   border-bottom: solid lightgrey;
 }
-.event_form_inputs{
+.event_form_inputs, .signup_form_inputs{
 width:100%;
 }
-.event_form_labels{
+.event_form_labels, .signup_form_labels{
 width:100%;
 }
-.event_form_button{
+.event_form_button, .signup_form_button{
   background-color: navy;
   color: white;
-  padding: 5px 20px;
+  padding: 5px 40px;
   font-size: 20px;
   box-shadow: 5px 5px 8px grey;
   border-radius: 50px;
@@ -47,15 +47,16 @@ float:center;
 }
 
 .event_form_category_drop_downs{
-color: blue;
+  color: navy;
   width:25%;
   font-size: 20pt;
   margin:0 35%;
-
-
 }
 
-#create_event_button {
+#create_event_button, #new_signup_button {
   padding-top: 30px;
   text-align: center
 }
+
+
+//signup form

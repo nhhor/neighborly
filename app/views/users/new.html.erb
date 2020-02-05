@@ -1,16 +1,1 @@
-<h1> Sign up</h1>
-<%= form_for @user do |f| %>
-  <%= f.label "Email" %>
-  <%= f.text_field :user_email %>
-  <%= f.label "First Name" %>
-  <%= f.text_field :user_name_first %>
-  <%= f.label "Last Name" %>
-  <%= f.text_field :user_name_last %>
-  <%= f.label "Zip Code" %>
-  <%= f.text_field :user_zip %>
-  <%= f.label "Password" %>
-  <%= f.password_field :password %>
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-  <%= f.submit "Sign Up" %>
-<% end %>
+<%= render "layouts/signup_form" %>
