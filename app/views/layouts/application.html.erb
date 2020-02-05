@@ -26,20 +26,21 @@
 
     <div class="nav_bar">
       <% if current_user %>
-      <h3>Welcome back, <%= current_user.user_email %> | <%= link_to "Sign out", '/signout', class: "nav_signout_button" %>  | <a href="/events" class="nav_event_button">All Events</a></h3>
+      <h3>Welcome back, <%= current_user.user_email %> ! <%= link_to "Sign out", '/signout', class: "nav_signout_button" %> <a href="/events" class="nav_event_button">All Events</a></h3>
       <% else %>
-      <%= link_to "Sign up", signup_path, class: "nav_signup_button" %> | <%= link_to "Sign in", '/signin', class: "nav_signin_button" %>
+      <%= link_to "Sign up", signup_path, class: "nav_signup_button" %> <%= link_to "Sign in", '/signin', class: "nav_signin_button" %>
       <% end %>
 
 
 
+  <% if session["user_id"] != nil %>
+  <%= render "layouts/search_form" %>
+  <% end %>
+</div>
 
-      <% if session["user_id"] != nil %>
-      <%= render "layouts/search_form" %>
-      <% end %>
 
 
-    </div>
+
 
     <br><br><br><br><br><br>
 
