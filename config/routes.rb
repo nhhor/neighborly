@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   resources :users do
     member do
       post :remove
-    end 
+    end
     resources :reviews
 
   end
