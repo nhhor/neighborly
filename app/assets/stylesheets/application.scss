@@ -5,6 +5,7 @@
 @import "driveby_small";
 @import "driveby_large";
 @import "form_styles";
+@import url('https://fonts.googleapis.com/css?family=Neucha|Sigmar+One&display=swap');
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -18,9 +19,19 @@
  * It is generally better to create a new file per style scope.
  */
 
+// Google Fonts
+// font-family: 'Neucha', cursive;
+// font-family: 'Sigmar One', cursive;
+
+// hex color pallete
+// #FEFFFF whiteish
+// #DEF2F1 less whiteish
+// #3AAFA9 background color turquoisy ish
+// #2B7A78 between turquoisy ish and black
+// #17252A black?
+
 body {
   background-color: #3AAFA9;
-
 }
 
 
@@ -62,17 +73,20 @@ body {
   // left: 25vw;
   width: 100vw;
   height: 80vh;
+  color: #DEF2F1;
+  text-shadow: 2px 2px black;
 }
 
 .welcome h1 {
   font-size: 120px;
   text-align: center;
+  font-family: 'Sigmar One', cursive;
 }
 
 .welcome h3 {
   text-align: center;
   font-size: 60px;
-
+  font-family: 'Neucha', cursive;
 }
 
 .NBanner {
