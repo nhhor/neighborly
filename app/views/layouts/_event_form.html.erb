@@ -13,9 +13,9 @@
   <%= f.time_field :event_time, class: 'event_form_inputs' %>
 
   <%= f.label "Description", class: 'event_form_labels' %>
-  <%= f.text_field :event_description, class: 'event_form_inputs' %>
+  <%= f.text_area :event_description, class: 'event_form_inputs' %>
 
-  <%= f.select(:event_category, options_for_select([['Party', 1], ['Games', 2], ['Movie', 3], ['Child-Friendly', 4], ['Study-Group', 5]]), class: 'event_form_inputs') %>
+  <%= f.select(:event_category, options_for_select([['Party', 1], ['Games', 2], ['Movie', 3], ['Child-Friendly', 4], ['Study-Group', 5]]), {}, { :class => 'event_form_category_drop_downs'}) %>
 
   <%= f.label "Street address", class: 'event_form_labels' %>
   <%= f.text_field :event_address, class: 'event_form_inputs' %>
