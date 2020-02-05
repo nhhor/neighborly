@@ -7,17 +7,17 @@
 @import "form_styles";
 @import url('https://fonts.googleapis.com/css?family=Neucha|Sigmar+One&display=swap');
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*/
 
 // Google Fonts
 // font-family: 'Neucha', cursive;
@@ -34,8 +34,72 @@ body {
   background-color: #3AAFA9;
 }
 
+.header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background: rgb(2,0,36);
+  background: linear-gradient(179deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 25%, rgba(58,175,169,1) 75%, rgba(58,175,169,0.75) 100%);
+  width: 100vw;
+  height: 10vh;
+}
+
 .yield {
+  margin-top: 150px;
   margin-left: 5%;
+  margin-bottom: 250px;
+}
+
+.welcome {
+  // position: absolute;
+  // top: 25%;
+  padding-top: 10%;
+  overflow: hidden;
+  // left: 25vw;
+  // width: 100vw;
+  height: 80vh;
+  color: #DEF2F1;
+  text-shadow: 2px 2px black;
+  z-index: 999;
+}
+
+.welcome h1 {
+  font-size: 120px;
+  text-align: center;
+  font-family: 'Sigmar One', cursive;
+}
+
+.welcome h3 {
+  text-align: center;
+  font-size: 60px;
+  font-family: 'Neucha', cursive;
+}
+
+
+.card-columns {
+padding-left: 10%;
+
+}
+
+.card {
+  background: rgba(250, 250, 250, .75);
+  margin: 10px;
+  width: 25%;
+  display: inline-block;
+  height: 275px;
+  border-radius: 5%;
+  padding: 15px;
+  border-style: outset;
+  border-width: 2px;
+  border-color: teal;
+}
+
+.new_event_path {
+  position: fixed;
+  top: 150px;
+  left: 20px;
+  width: 200px;
+  height: 50px;
 }
 
 
@@ -52,7 +116,7 @@ body {
   // margin:100px;
   box-shadow: 5px 10px 10px grey;
   text-align: center;
- // z-index: 1;
+  // z-index: 1;
 }
 
 .search_form_center {
@@ -62,37 +126,18 @@ body {
 
 
 .nav_bar {
-  position: absolute;
-  top: 10px;
-  left: 10px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+
   color: green;
   width: 100vw;
   font-size: 20pt;
   font-family: 'Neucha', cursive;
 }
 
-.welcome {
-  // position: absolute;
-  // top: 25%;
-  padding-top: 10%;
-  overflow: hidden;
-  // left: 25vw;
+  color: green;
   width: 100vw;
-  height: 80vh;
-  color: #DEF2F1;
-  text-shadow: 2px 2px black;
-}
-
-.welcome h1 {
-  font-size: 120px;
-  text-align: center;
-  font-family: 'Sigmar One', cursive;
-}
-
-.welcome h3 {
-  text-align: center;
-  font-size: 60px;
-  font-family: 'Neucha', cursive;
 }
 
 .NBanner {
@@ -108,177 +153,169 @@ body {
 
 }
 
-.header {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  background: rgb(2,0,36);
 
-  background: linear-gradient(179deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 25%, rgba(58,175,169,1) 75%, rgba(58,175,169,0.75) 100%);
 
-  width: 100vw;
-  height: 10vh;
+/* BIRDS */
+.container {
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // min-height: 100vh;
+  min-height: 35rem;
+  // background-image: linear-gradient(to bottom,  rgba(255,168,76,0.6) 0%,rgba(255,123,13,0.6) 100%), url('https://images.unsplash.com/photo-1446824505046-e43605ffb17f');
+  background-blend-mode: soft-light;
+  background-size: cover;
+  background-position: center center;
+  padding: 2rem;
 }
 
-    /* BIRDS */
-    .container {
-     	z-index: 1;
-     	position: relative;
-     	overflow: hidden;
-     	display: flex;
-     	align-items: center;
-     	justify-content: center;
-     	// min-height: 100vh;
-     	min-height: 35rem;
-     	// background-image: linear-gradient(to bottom,  rgba(255,168,76,0.6) 0%,rgba(255,123,13,0.6) 100%), url('https://images.unsplash.com/photo-1446824505046-e43605ffb17f');
-     	background-blend-mode: soft-light;
-     	background-size: cover;
-     	background-position: center center;
-     	padding: 2rem;
-     }
+.bird {
+  overflow: hidden;
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/174479/bird-cells-new.svg);
+  background-size: auto 100%;
+  width: 88px;
+  height: 125px;
+  will-change: background-position;
 
-     .bird {
-     	background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/174479/bird-cells-new.svg);
-     	background-size: auto 100%;
-     	width: 88px;
-     	height: 125px;
-     	will-change: background-position;
+  animation-name: fly-cycle;
+  animation-timing-function: steps(10);
+  animation-iteration-count: infinite;
 
-     	animation-name: fly-cycle;
-     	animation-timing-function: steps(10);
-     	animation-iteration-count: infinite;
+  &--one {
+    animation-duration: 1s;
+    animation-delay: -0.5s;
+  }
 
-     	&--one {
-     		animation-duration: 1s;
-     		animation-delay: -0.5s;
-     	}
+  &--two {
+    animation-duration: 0.9s;
+    animation-delay: -0.75s;
+  }
 
-     	&--two {
-     		animation-duration: 0.9s;
-     		animation-delay: -0.75s;
-     	}
+  &--three {
+    animation-duration: 1.25s;
+    animation-delay: -0.25s;
+  }
 
-     	&--three {
-     		animation-duration: 1.25s;
-     		animation-delay: -0.25s;
-     	}
+  &--four {
+    animation-duration: 1.1s;
+    animation-delay: -0.5s;
+  }
 
-     	&--four {
-     		animation-duration: 1.1s;
-     		animation-delay: -0.5s;
-     	}
+}
 
-     }
+.bird-container {
+  overflow: hidden;
+  position: absolute;
+  bottom: 40%;
+  left: -10%;
+  transform: scale(0) translateX(-10vw);
+  will-change: transform;
 
-     .bird-container {
-     	position: absolute;
-     	bottom: 40%;
-     	left: -10%;
-     	transform: scale(0) translateX(-10vw);
-     	will-change: transform;
+  animation-name: fly-right-one;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 
-     	animation-name: fly-right-one;
-     	animation-timing-function: linear;
-     	animation-iteration-count: infinite;
+  &--one {
+    animation-duration: 15s;
+    animation-delay: 0;
+  }
 
-     	&--one {
-     		animation-duration: 15s;
-     		animation-delay: 0;
-     	}
+  &--two {
+    animation-duration: 16s;
+    animation-delay: 1s;
+  }
 
-     	&--two {
-     		animation-duration: 16s;
-     		animation-delay: 1s;
-     	}
+  &--three {
+    animation-duration: 14.6s;
+    animation-delay: 9.5s;
+  }
 
-     	&--three {
-     		animation-duration: 14.6s;
-     		animation-delay: 9.5s;
-     	}
+  &--four {
+    animation-duration: 16s;
+    animation-delay: 10.25s;
+  }
 
-     	&--four {
-     		animation-duration: 16s;
-     		animation-delay: 10.25s;
-     	}
+}
 
-     }
+@keyframes fly-cycle {
 
-     @keyframes fly-cycle {
+  100% {
+    background-position: -900px 0;
+  }
 
-     	100% {
-     		background-position: -900px 0;
-     	}
+}
 
-     }
+@keyframes fly-right-one {
 
-     @keyframes fly-right-one {
+  0% {
+    transform: scale(0.3) translateX(-10vw);
+  }
 
-     	0% {
-     		transform: scale(0.3) translateX(-10vw);
-     	}
+  10% {
+    transform: translateY(2vh) translateX(10vw) scale(0.4);
+  }
 
-     	10% {
-     		transform: translateY(2vh) translateX(10vw) scale(0.4);
-     	}
+  20% {
+    transform: translateY(0vh) translateX(30vw) scale(0.5);
+  }
 
-     	20% {
-     		transform: translateY(0vh) translateX(30vw) scale(0.5);
-     	}
+  30% {
+    transform: translateY(4vh) translateX(50vw) scale(0.6);
+  }
 
-     	30% {
-     		transform: translateY(4vh) translateX(50vw) scale(0.6);
-     	}
+  40% {
+    transform: translateY(2vh) translateX(70vw) scale(0.6);
+  }
 
-     	40% {
-     		transform: translateY(2vh) translateX(70vw) scale(0.6);
-     	}
+  50% {
+    transform: translateY(0vh) translateX(90vw) scale(0.6);
+  }
 
-     	50% {
-     		transform: translateY(0vh) translateX(90vw) scale(0.6);
-     	}
+  60% {
+    transform: translateY(0vh) translateX(110vw) scale(0.6);
+  }
 
-     	60% {
-     		transform: translateY(0vh) translateX(110vw) scale(0.6);
-     	}
+  100% {
+    transform: translateY(0vh) translateX(110vw) scale(0.6);
+  }
 
-     	100% {
-     		transform: translateY(0vh) translateX(110vw) scale(0.6);
-     	}
+}
 
-     }
+@keyframes fly-right-two {
 
-     @keyframes fly-right-two {
+  0% {
+    transform: translateY(-2vh) translateX(-10vw) scale(0.5);
+  }
 
-     	0% {
-     		transform: translateY(-2vh) translateX(-10vw) scale(0.5);
-     	}
+  10% {
+    transform: translateY(0vh) translateX(10vw) scale(0.4);
+  }
 
-     	10% {
-     		transform: translateY(0vh) translateX(10vw) scale(0.4);
-     	}
+  20% {
+    transform: translateY(-4vh) translateX(30vw) scale(0.6);
+  }
 
-     	20% {
-     		transform: translateY(-4vh) translateX(30vw) scale(0.6);
-     	}
+  30% {
+    transform: translateY(1vh) translateX(50vw) scale(0.45);
+  }
 
-     	30% {
-     		transform: translateY(1vh) translateX(50vw) scale(0.45);
-     	}
+  40% {
+    transform: translateY(-2.5vh) translateX(70vw) scale(0.5);
+  }
 
-     	40% {
-     		transform: translateY(-2.5vh) translateX(70vw) scale(0.5);
-     	}
+  50% {
+    transform: translateY(0vh) translateX(90vw) scale(0.45);
+  }
 
-     	50% {
-     		transform: translateY(0vh) translateX(90vw) scale(0.45);
-     	}
+  51% {
+    transform: translateY(0vh) translateX(110vw) scale(0.45);
+  }
 
-     	51% {
-     		transform: translateY(0vh) translateX(110vw) scale(0.45);
-     	}
+  100% {
+    transform: translateY(0vh) translateX(110vw) scale(0.45);
+  }
 
-     	100% {
-     		transform: translateY(0vh) translateX(110vw) scale(0.45);
-     	}
-
-     }
+}
