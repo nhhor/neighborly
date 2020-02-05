@@ -34,11 +34,47 @@ body {
   background-color: #3AAFA9;
 }
 
+.header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background: rgb(2,0,36);
+  background: linear-gradient(179deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 25%, rgba(58,175,169,1) 75%, rgba(58,175,169,0.75) 100%);
+  width: 100vw;
+  height: 10vh;
+}
+
 .yield {
   margin-top: 150px;
   margin-left: 5%;
   margin-bottom: 250px;
 }
+
+.welcome {
+  // position: absolute;
+  // top: 25%;
+  padding-top: 10%;
+  overflow: hidden;
+  // left: 25vw;
+  // width: 100vw;
+  height: 80vh;
+  color: #DEF2F1;
+  text-shadow: 2px 2px black;
+  z-index: 999;
+}
+
+.welcome h1 {
+  font-size: 120px;
+  text-align: center;
+  font-family: 'Sigmar One', cursive;
+}
+
+.welcome h3 {
+  text-align: center;
+  font-size: 60px;
+  font-family: 'Neucha', cursive;
+}
+
 
 .card-columns {
 padding-left: 10%;
@@ -90,35 +126,12 @@ padding-left: 10%;
 
 
 .nav_bar {
-  position: absolute;
-  top: 10px;
-  left: 10px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+
   color: green;
   width: 100vw;
-}
-
-.welcome {
-  // position: absolute;
-  // top: 25%;
-  padding-top: 10%;
-  overflow: hidden;
-  // left: 25vw;
-  width: 100vw;
-  height: 80vh;
-  color: #DEF2F1;
-  text-shadow: 2px 2px black;
-}
-
-.welcome h1 {
-  font-size: 120px;
-  text-align: center;
-  font-family: 'Sigmar One', cursive;
-}
-
-.welcome h3 {
-  text-align: center;
-  font-size: 60px;
-  font-family: 'Neucha', cursive;
 }
 
 .NBanner {
@@ -134,17 +147,7 @@ padding-left: 10%;
 
 }
 
-.header {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  background: rgb(2,0,36);
 
-  background: linear-gradient(179deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 25%, rgba(58,175,169,1) 75%, rgba(58,175,169,0.75) 100%);
-
-  width: 100vw;
-  height: 10vh;
-}
 
 /* BIRDS */
 .container {
@@ -164,6 +167,7 @@ padding-left: 10%;
 }
 
 .bird {
+  overflow: hidden;
   background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/174479/bird-cells-new.svg);
   background-size: auto 100%;
   width: 88px;
@@ -197,6 +201,7 @@ padding-left: 10%;
 }
 
 .bird-container {
+  overflow: hidden;
   position: absolute;
   bottom: 40%;
   left: -10%;
