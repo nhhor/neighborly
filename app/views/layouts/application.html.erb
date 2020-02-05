@@ -25,9 +25,9 @@
 
     <div class="nav_bar">
       <% if current_user %>
-      <h3>Welcome back, <%= current_user.user_email %> | <%= link_to "Sign out", '/signout', class: "btn btn-danger" %>  | <a href="/events" class="btn btn-info">All Events</a></h3>
+      <h3>Welcome back, <%= current_user.user_email %> | <%= link_to "Sign out", '/signout', class: "nav_signout_button" %>  | <a href="/events" class="nav_event_button">All Events</a></h3>
       <% else %>
-      <%= link_to "Sign up", signup_path, class: "btn btn-success" %> | <%= link_to "Sign in", '/signin', class: "btn btn-info" %>
+      <%= link_to "Sign up", signup_path, class: "nav_signup_button" %> | <%= link_to "Sign in", '/signin', class: "nav_signin_button" %>
       <% end %>
 
 
@@ -40,6 +40,7 @@
 
 
     </div>
+
 
 
     <div class="flash_messages">

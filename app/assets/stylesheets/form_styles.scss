@@ -1,4 +1,4 @@
-.new_event_form, .signup_form {
+.new_event_form, .signup_form, .signin_form {
 background-color: #E6F9D0 ;
 border: thick solid #D8F2BB;
 border-radius: 20px;
@@ -10,7 +10,7 @@ position: absolute;
 z-index: 1;
 }
 
-.new_event_form h1, .signup_form h1{
+.new_event_form h1, .signup_form h1, .signin_form h1{
   background-color: #D8F2BB;
   padding: 20px;
   margin-left: -42px;
@@ -21,21 +21,22 @@ z-index: 1;
   border-top-right-radius: 20px;
   border-bottom: solid lightgrey;
 }
-.event_form_inputs, .signup_form_inputs{
+.event_form_inputs, .signup_form_inputs, .signin_form_inputs{
+width:100%;
+padding:10px;
+}
+.event_form_labels, .signup_form_labels, .signin_form_labels{
 width:100%;
 }
-.event_form_labels, .signup_form_labels{
-width:100%;
-}
-.event_form_button, .signup_form_button{
+.event_form_button, .signup_form_button, .signin_form_button{
   background-color: navy;
   color: white;
   padding: 5px 40px;
   font-size: 20px;
   box-shadow: 5px 5px 8px grey;
   border-radius: 50px;
-border: none;
-float:center;
+  border: none;
+
 
 }
 .event_form_button:hover {background-color: #3e8e41
@@ -51,12 +52,10 @@ float:center;
   width:25%;
   font-size: 20pt;
   margin:0 35%;
+
 }
 
-#create_event_button, #new_signup_button {
+#create_event_button, #new_signup_button, #signin_button {
   padding-top: 30px;
   text-align: center
 }
-
-
-//signup form
