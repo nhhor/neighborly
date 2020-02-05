@@ -27,6 +27,9 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+# ~NH~ added below for API CALLS
+gem 'httparty'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -48,6 +51,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'launchy'
   gem 'pry'
+  gem 'dotenv-rails'
 end
 
 group :development do

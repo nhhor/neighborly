@@ -32,7 +32,13 @@
       <% end %>
 
 
-      <a href="/events" class="btn btn-info">Events</a> | <%= render "layouts/search_form" %>
+      <a href="/events" class="btn btn-info">Events</a> |
+
+      <% if session["user_id"] != nil %>
+      <%= render "layouts/search_form" %>
+      <% end %>
+
+
     </div>
 
     <br><br><br><br><br><br>
