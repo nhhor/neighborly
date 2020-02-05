@@ -46,7 +46,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
 
     if @event.save
-      NewEventMailer.notify_event(@user).deliver_now
+      NewEventMailer.notify_event(@user, @event).deliver_now
       flash[:notice] = "Your Event has been created!"
       # redirect_to event_path(@id, @event)
       redirect_to event_path(@event)

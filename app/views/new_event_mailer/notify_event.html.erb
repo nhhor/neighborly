@@ -1,1 +1,17 @@
-You made a new event! Pressure is on.  Don't be a flake.
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body style="background-color:#3AAFA9">
+  <h1>Hi <%= @user.user_name_first %></h1>
+  <h2>You made a new event. Pressure is on.  Don't be a flake.</h2> <br>
+  <h3> Event Name: <%= @event.event_name %> <br>
+    Event Descritpion <%= @event.event_description %> <br>
+    Date: <%= @event.event_date %> <br>
+    Time: <%= @event.event_time %> <br>
+    Address: <%= @event.event_address %> <br></h3>    
+  </body>
+  </html>
