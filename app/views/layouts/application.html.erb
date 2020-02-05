@@ -7,7 +7,6 @@
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <link rel="stylesheet" href="app/assets/stylesheets/styles.scss">
 </head>
 
 <body>
@@ -34,6 +33,7 @@
 
 
 
+
       <% if session["user_id"] != nil %>
       <%= render "layouts/search_form" %>
       <% end %>
@@ -41,7 +41,7 @@
 
     </div>
 
-    <br><br><br><br><br><br>
+
 
     <div class="flash_messages">
       <%= flash[:alert] %>
