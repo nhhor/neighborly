@@ -2,15 +2,15 @@
 
   <h1> Sign in</h1>
 
-  <%= form_tag signin_path do %>
-    <%= label_tag :user_email, class:'signin_form_labels'  %>
-    <%= text_field_tag :user_email, class: 'signin_form_inputs' %>
+  <%= form_for 'signin_path' do |f|%>
+    <%= f.label :user_email, class: 'signin_form_labels'  %>
+    <%= f.text_field :user_email, class: 'signin_form_inputs' %>
 
-    <%= label_tag :password, class:'signin_form_labels'  %>
-    <%= password_field_tag :password, class: 'signin_form_inputs' %>
+    <%= f.label :password, class:'signin_form_labels'  %>
+    <%= f.password_field :password, class: 'signin_form_inputs' %>
     <div id="signin_button">
 
-      <%= submit_tag "Sign in", class: 'signin_form_button' %>
+      <%= f.submit"Sign in", class: 'signin_form_button' %>
     </div>
   <% end %>
 
