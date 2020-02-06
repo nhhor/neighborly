@@ -62,6 +62,7 @@ class EventsController < ApplicationController
     @user = User.find(session[:user_id])
     # event = Event.where(employee_name: params[:employee].fetch("employee")).first
     @event = Event.find(params[:id])
+    NewEventSignupMailer.notify_signup(@user, @event).deliver_now
     @user.events << @event
     redirect_to event_path(@event)
 
