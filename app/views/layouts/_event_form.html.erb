@@ -29,7 +29,7 @@
     <%= f.text_field :event_state, class: 'event_form_inputs', :required => true %>
 
     <%= f.label "Zip Code", class: 'event_form_labels' %>
-    <%= f.number_field(:event_zip, in: 97201..97299, step: 1.0, class: 'event_form_inputs', :required => true) %>
+    <%= f.number_field(:event_zip, in: 97201..97299, step: 1.0, class: 'event_form_inputs', :required => true, prompt: "Select something") %>
 
     <%= f.label "Age Requirement", class: 'event_form_labels' %>
     <%= f.number_field(:event_age_min, in: 0..100, step: 1.0, class: 'event_form_inputs', :required => true) %>
@@ -38,7 +38,7 @@
     <%= f.number_field(:event_min_seats, in: 0..1000, step: 1.0, class: 'event_form_inputs', :required => true) %>
 
     <%= f.label "Maximum People Allowed to Attend", class: 'event_form_labels' %>
-    <%= f.number_field(:event_max_seats, in: 1..1000, step: 1.0, class: 'event_form_inputs', :required => true) %>
+    <%= f.number_field(:event_max_seats, in: 1..1000, step: 1.0, class: 'event_form_inputs', :required => true, prompt: "Select something") %>
 
   <div id="create_event_button"><%= f.submit "Create", class: 'event_form_button' %></div>
   <% end %>
