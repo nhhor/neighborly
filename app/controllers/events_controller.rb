@@ -46,6 +46,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
 
     if @event.save
+      NewEventMailer.notify_event(@user, @event).deliver_now
       flash[:notice] = "Your Event has been created!"
       # redirect_to event_path(@id, @event)
       redirect_to event_path(@event)
@@ -61,6 +62,7 @@ class EventsController < ApplicationController
     @user = User.find(session[:user_id])
     # event = Event.where(employee_name: params[:employee].fetch("employee")).first
     @event = Event.find(params[:id])
+    NewEventSignupMailer.notify_signup(@user, @event).deliver_now
     @user.events << @event
     redirect_to event_path(@event)
 

@@ -1,0 +1,15 @@
+#car {
+      position:fixed;
+      bottom: -8%;
+      left: -100%;
+      margin: 7em -244px;
+      animation: slide 5s infinite;
+      animation-delay: 5.5s;
+      z-index: 1;
+  }
+  @keyframes slide {
+      0% { left: -150%; }
+      35% { left: 50%; }
+      65% { left: 50%; }
+      100% { left: 150%; }
+  }
