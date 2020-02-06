@@ -5,6 +5,7 @@
 @import "driveby_small";
 @import "driveby_large";
 @import "form_styles";
+@import "car_styles";
 @import url('https://fonts.googleapis.com/css?family=Neucha|Sigmar+One&display=swap');
 /*
 * This is a manifest file that'll be compiled into application.css, which will include all the files
@@ -134,10 +135,6 @@ padding-left: 10%;
   width: 100vw;
   font-size: 20pt;
   font-family: 'Neucha', cursive;
-}
-
-  color: green;
-  width: 100vw;
 }
 
 .NBanner {
