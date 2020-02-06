@@ -1,0 +1,60 @@
+
+.search_form{
+  background-color: #E6F9D0 ;
+  border: thick solid #D8F2BB;
+  border-radius: 20px;
+  padding: 0 40px;
+  box-shadow: -2px 5px 10px #40403F;
+  position: absolute;
+  z-index: 1;
+  color: navy;
+margin:0 2%;
+
+}
+
+
+.nav_bar{
+
+  z-index: 1;
+  color: navy;
+
+    height: 25%;
+    width: 100vw;
+
+}
+.nav_welcome_text{
+  font-family: 'Sigmar One';
+  font-size: 20px;
+  padding: 2px;
+}
+
+.nav_event_button, .nav_signin_button, .nav_signup_button, .nav_signout_button, .create_event_button, .nav_event_button, .submit_form_button{
+	background-color: navy;
+  font-family: 'Sigmar One', cursive;
+	padding: 2px 10px;
+	font-size: 8pt;
+	box-shadow: -2px 2px 4px black;
+	border-radius: 50px;
+  border: none;
+
+}
+.nav_signin_button{
+font-size: 8pt;
+	color:#6BFA6B;
+}
+.nav_signout_button{
+	color:#FB0413;
+	font-size: 8pt;
+}
+.nav_signup_button{
+	color:#FBEC04;
+	font-size: 8pt;
+}
+.nav_event_button{
+  color: yellow;
+  font-size: 8pt;
+}
+.submit_form_button{
+  color: white;
+  padding: 2px 10px;
+}

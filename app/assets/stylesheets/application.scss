@@ -6,6 +6,7 @@
 @import "driveby_large";
 @import "form_styles";
 @import "car_styles";
+@import "nav_styles";
 @import url('https://fonts.googleapis.com/css?family=Neucha|Sigmar+One&display=swap');
 /*
 * This is a manifest file that'll be compiled into application.css, which will include all the files
@@ -147,37 +148,10 @@ padding-left: 10%;
 }
 
 
-.search_form {
-  color: black;
-  margin-left: 25%;
-  margin-right: 25%;
-  // max-width: 850px;
-  background-color: #E6F9D0 ;
-  border: thick solid #D8F2BB;
-  border-radius: 20px;
-  // width: 50%;
-  margin-top: 15px;
-  // margin:100px;
-  box-shadow: 5px 10px 10px grey;
-  text-align: center;
-  // z-index: 1;
-}
-
-.search_form_center {
-  display: inline-block;
-
-}
 
 
-.nav_bar {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  color: green;
-  width: 100vw;
 
 
-}
 
 
 
