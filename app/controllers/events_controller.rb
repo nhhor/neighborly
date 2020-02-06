@@ -79,6 +79,8 @@ class EventsController < ApplicationController
 
     @user = User.find(@id)
     @event = Event.find(params[:id])
+    # binding.pry
+
     @signedup_user_ids = []
     @signedup_user_names = []
     sql = "select * from events_users where event_id = #{@event.id};"

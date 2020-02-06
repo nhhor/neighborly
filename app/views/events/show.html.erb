@@ -1,10 +1,8 @@
 
-
-
 <div class="card" id ="individual_event_display">
   <div class="card-body">
     <h3 class="card-title"><%= @event.event_name %></h3>
-    <p class="card-text">WHEN: <%= @event.event_date %> </p>
+    <p class="card-text"> <em class="emClass">WHEN: </em> <%= @event.event_date %> at <%= @event.event_time.strftime('%l:%M:%S %p') %> </p>
     <p class="card-text"><p>Created by: <%= @event.user.user_email %></p>
     <!-- </p> -->
 

@@ -25,16 +25,22 @@
 
       faker_events = ["Party", "Games", "Movie", "Child-Friendly", "Study Group"]
 
+      faker_ages = [0, 18, 21, 18, 21]
+
+      faker_hour = Faker::Number.between(from: 1, to: 23)
+      faker_min_sec = "00:00"
+      faker_time = "#{faker_hour}:#{faker_min_sec}"
+
       event_name = ((Faker::Verb.base).titleize + " with " + (Faker::GreekPhilosophers.name))
       Event.create! event_name: event_name,
       event_date: Faker::Date.forward(days: 90),
-      event_time: nil,
+      event_time: faker_time,
       event_address: Faker::Address.street_address,
       event_zip: faker_zip_array[rand(141)],
       event_city: Faker::Address.city,
       event_state: Faker::Address.state,
       event_description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: true),
-      event_age_min: 21,
+      event_age_min: faker_ages[rand(4)],
       event_category: faker_events[rand(4)],
       event_min_seats: 2,
       event_max_seats: 10,
