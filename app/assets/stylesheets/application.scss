@@ -31,13 +31,10 @@
 // #2B7A78 between turquoisy ish and black
 // #17252A black?
 
-body {
-   // background: radial-gradient(at 0% 30%, red 10px, yellow 30%, #1e90ff 50%);
-  background-image: linear-gradient(to bottom left, white, yellow 20%, #3AAFA9, #3AAFA9  );
+html  {
+   background: radial-gradient(at 120% 0%, orange 10%, yellow 20%, #3AAFA9 50%);
+
 }
-//   background-image: radial-gradient(farthest-corner at 10px 40px,
-//     yellow 50%, #3AAFA9 100%);
-// }
 
 .header {
   position: fixed;
@@ -81,7 +78,12 @@ body {
   font-family: 'Neucha', cursive;
 }
 
-
+.flash_messages{
+  font-size: 20pt;
+  background-color: yellow;
+  position: static;
+  z-index: 2
+}
 .card-columns {
 padding-left: 10%;
 

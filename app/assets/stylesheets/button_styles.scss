@@ -43,7 +43,12 @@
 }
 
 
+//link for sign in on welcome page will be brought to front
 
+.buttons #signin_link{
+  position:sticky;
+	z-index: 10;
+}
 
 
 // BLOB BUTTON
@@ -176,7 +181,7 @@ $borderW: 2px;
   font-family: 'Sigmar One', cursive;
 	padding: 10px;
 	font-size: 15pt;
-	box-shadow: 5px 5px 8px black;
+	box-shadow: -2px 2px 4px black;
 	border-radius: 50px;
   border: none;
 
