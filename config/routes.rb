@@ -1,17 +1,18 @@
 Rails.application.routes.draw do
 
   root to: 'home#index'
-  get '/signup' => 'users#new'
+
   get '/home' => 'home#index'
+  get '/signup' => 'users#new'
+  get '/signin' => 'sessions#new'
+  post '/signin' => 'sessions#create'
+  get '/signout' => 'sessions#destroy'
   post '/users' => 'users#create'
 
   get '/events' => 'events#index'
-  post '/signin' => 'sessions#create'
-  get '/signout' => 'sessions#destroy'
 
 
   # ~ONE~
-  get '/signin' => 'sessions#new'
 
   resources :events do
     member do
