@@ -25,7 +25,8 @@
 
       faker_events = ["Party", "Games", "Movie", "Child-Friendly", "Study Group"]
 
-      Event.create! event_name: Faker::GreekPhilosophers.name,
+      event_name = ((Faker::Verb.base).titleize + " with " + (Faker::GreekPhilosophers.name))
+      Event.create! event_name: event_name,
       event_date: Faker::Date.forward(days: 90),
       event_time: nil,
       event_address: Faker::Address.street_address,
@@ -39,6 +40,7 @@
       event_max_seats: 10,
       user_id: user.id
     end
+    p "...working"
   end
 end
 p "worked..."
