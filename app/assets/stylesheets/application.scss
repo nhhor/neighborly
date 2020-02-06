@@ -47,6 +47,7 @@ body {
 .yield {
   margin-top: 150px;
   margin-left: 5%;
+  margin-right: 5%;
   margin-bottom: 250px;
 }
 
@@ -56,7 +57,7 @@ body {
   padding-top: 10%;
   overflow: hidden;
   // left: 25vw;
-  // width: 100vw;
+  width: 100%;
   height: 80vh;
   color: #DEF2F1;
   text-shadow: 2px 2px black;
@@ -107,7 +108,7 @@ padding-left: 10%;
   color: black;
   margin-left: 25%;
   margin-right: 25%;
-  max-width: 850px;
+  // max-width: 850px;
   background-color: #E6F9D0 ;
   border: thick solid #D8F2BB;
   border-radius: 20px;
@@ -134,10 +135,6 @@ padding-left: 10%;
   width: 100vw;
   font-size: 20pt;
   font-family: 'Neucha', cursive;
-}
-
-  color: green;
-  width: 100vw;
 }
 
 .NBanner {
