@@ -4,10 +4,13 @@
     <h1 class="roll-in-blurred-bottom">NEIGHBORLY</h1>
     <h3 class="bounce-in-left">Make Friends. <span id="tracking-in-expand">Close.</span></h3>
     <%= render "layouts/start_button" %>
+    <audio autoplay preload>
+      <source id="audio" src="assets/neighborly-audio.mp3" type="audio/mpeg"</source>
+      </audio>
+
+      <iframe src="assets/neighborly-audio.mp3" allow="autoplay" style="display:none" id="iframeAudio">
+</iframe>
   </div>
-  <audio autoplay>
-    <source id="audio" src="/neighborly-audio.mp3" type="audio/mpeg"</source>
-  </audio>
 
 <div>
   <img id="car" src="https://gamepedia.cursecdn.com/hillclimbracing2_gamepedia_en/2/2f/Sportscar.png" width="250px" height="150px" alt="small car">
