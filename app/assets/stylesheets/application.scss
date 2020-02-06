@@ -34,7 +34,8 @@
 body  {
    background: radial-gradient(at 120% 0%, orange 10%, yellow 20%, #3AAFA9 50%);
    background-repeat: no-repeat;
-   height: 100%;
+   background-attachment: fixed;
+   background-size: cover;
 }
 
 .header {
@@ -112,9 +113,15 @@ padding-left: 10%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
+}
 
-
-
+#center_forms {
+  margin: 0;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
 }
 
 .new_event_path {
