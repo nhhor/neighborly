@@ -1,16 +1,19 @@
-<h1><%= @user.user_name_first %>'s Information</h1>
 
-<h5>User Full Name:<%=@user.user_name_first%> <%=@user.user_name_last%></h5>
+<div class="card" id ="individual_user_display" >
+  <div class="card-body">
+<h1 class="card-title"><%= @user.user_name_first %>'s Information</h1>
 
-
-<h5>User Email:<%=@user.user_email%></h5>
-
-<h5>User Zip:<%=@user.user_zip%></h5>
+<h5 class="card-text">User Full Name: <%=@user.user_name_first%> <%=@user.user_name_last%></h5>
 
 
-<p><%= link_to "Edit this user", edit_user_path(@user) %></p>
+<h5 class="card-text">User Email: <%=@user.user_email%></h5>
 
-<p><%= link_to "Go back to list of users", users_path %></p>
+<h5 class="card-text">User Zip: <%=@user.user_zip%></h5>
+
+
+<p class="card-text"><%= link_to "Edit this user", edit_user_path(@user) %></p>
+
+<p class="card-text"><%= link_to "Go back to list of users", users_path %></p>
 
 
 <!-- <p>Editing in the flake functionality</p> -->
@@ -18,22 +21,22 @@
 
 <%if @user.events.any?%>
 
-<h3><%= @user.user_name_first %> has signed up for these events: </h3>
-<ul>
+<h3 class="card-text"><%= @user.user_name_first %> has signed up for these events: </h3>
   <%@user.events.each do |event| %>
 
-  <li> <%=event.event_name %>
+  <p class="card-text"> <%=event.event_name %>
 
     <% if current_user.id == @user.id %>
     <%= form_for "flake", :url => {:action => "remove"} do |f| %>
     <%= f.hidden_field :event_id, :value => event.id %>
-    <%= f.submit "Flake on this event" %></li>
+    <%= f.submit "Flake on this event", class: 'signup_form_button' %></p>
     <% end %>
     <% end %>
-  </ul>
   <% end %>
   <% else %>
 
   <p>This user has not signed up for any events</p>
 
   <% end %>
+  </div>
+</div>
