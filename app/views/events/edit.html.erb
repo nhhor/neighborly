@@ -1,1 +1,69 @@
-<%= render "layouts/event_form", :method => "patch" %>
+
+<div class="new_event_form">
+  <h1> Edit Event</h1>
+  <%= form_for @event  do |f| %>
+  <table>
+    <tr>
+      <td class="tdClass" colspan="2">
+        <%= f.label "Name your Event", class: 'event_form_labels' %>
+        <%= f.text_field :event_name, class: 'event_form_inputs', :required => true %>
+      </td>
+      <td class="tdClass">
+        <%= f.label "Select a Category", class: 'event_form_labels' %>
+        <%= f.select(:event_category, options_for_select([['Party', 1 ], ['Games', 2], ['Movie', 3], ['Child-Friendly', 4], ['Study-Group', 5]]), {}, { :class => 'event_form_category_drop_downs', :required => true}) %>
+      </td>
+    </tr>
+    <tr>
+      <td class="tdClass" colspan="2">
+        <%= f.label "Date", class: 'event_form_labels' %>
+        <%= f.date_field :event_date, class: 'event_form_inputs', :required => true %>
+      </td>
+      <td class="tdClass">
+        <%= f.label "Time", class: 'event_form_labels' %>
+        <%= f.time_field :event_time, class: 'event_form_inputs', :required => true %>
+      </td>
+    </tr>
+    <tr>
+      <td class="tdClass" colspan="3">
+        <%= f.label "Description", class: 'event_form_labels' %>
+        <%= f.text_area :event_description, class: 'event_form_inputs', :required => true %>
+      </td>
+    </tr>
+    <tr>
+      <td class="tdClass" colspan="3">
+        <%= f.label "Street address", class: 'event_form_labels' %>
+        <%= f.text_field :event_address, class: 'event_form_inputs', :required => true %>
+      </td>
+    </tr>
+    <tr>
+      <td class="tdClass">
+        <%= f.label "City", class: 'event_form_labels' %>
+        <%= f.text_field :event_city, class: 'event_form_inputs', :required => true %>
+      </td>
+      <td class="tdClass">
+        <%= f.label "State", class: 'event_form_labels' %>
+        <%= f.text_field :event_state, class: 'event_form_inputs', :required => true %>
+      </td>
+      <td class="tdClass">
+        <%= f.label "Zip Code", class: 'event_form_labels' %>
+        <%= f.number_field(:event_zip, in: 97201..97299, step: 1.0, class: 'event_form_inputs', :required => true, prompt: "Select something") %>
+      </td>
+    </tr>
+    <tr>
+      <td class="tdClass">
+        <%= f.label "Minimum People Allowed to Attend", class: 'event_form_labels' %>
+        <%= f.number_field(:event_min_seats, in: 0..1000, step: 1.0, class: 'event_form_inputs', :required => true) %>
+      </td>
+      <td class="tdClass">
+        <%= f.label "Maximum People Allowed to Attend", class: 'event_form_labels' %>
+        <%= f.number_field(:event_max_seats, in: 1..1000, step: 1.0, class: 'event_form_inputs', :required => true, prompt: "Select something") %>
+      </td>
+      <td class="tdClass">
+        <%= f.label "Age Requirement", class: 'event_form_labels' %>
+        <%= f.number_field(:event_age_min, in: 0..100, step: 1.0, class: 'event_form_inputs', :required => true) %>
+      </td>
+    </tr>
+  </table>
+  <div id="create_event_button"><%= f.submit "edit", class: 'event_form_button' %></div>
+  <% end %>
+</div>
