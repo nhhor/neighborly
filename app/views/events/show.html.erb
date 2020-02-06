@@ -1,49 +1,46 @@
-<h1><%= @event.event_name %></h1>
 
-<h3><em class="emClass">Created by:</em> <%= @event.user.user_email %></h3>
-<h3><%= @event.event_address %> <%= @event.event_city %>, <%= @event.event_state %> <%= @event.event_zip %></h3>
-<h5><%= @event.event_date %> at <%= @event.event_time.strftime('%l:%M:%S %p') %></h5>
+<div class="card" id ="individual_event_display">
+  <div class="card-body">
+    <h3 class="card-title"><%= @event.event_name %></h3>
+    <p class="card-text"> <em class="emClass">WHEN: </em> <%= @event.event_date %> at <%= @event.event_time.strftime('%l:%M:%S %p') %> </p>
+    <p class="card-text"><p>Created by: <%= @event.user.user_email %></p>
+    <!-- </p> -->
+
+    <p class="card-text">WHERE: <%= @event.event_address %> <%= @event.event_city %>, <%= @event.event_state %> <%= @event.event_zip %></p>
+    <p class="card-text">AGE REQUIREMENT: <%= @event.event_age_min %>+ </p>
+    <p class="card-text">DESCRIPTION: <%= @event.event_description %></p>
+    <p class="card-text">CATEGORY: <%= @event.event_category %></p>
 
 
-
-
-
-<h5> <%= @event.event_category%> </h5>
-<p><%= link_to "Edit", edit_event_path(@event) %></p>
-<p><%= link_to "Delete", event_path(@event),
-  :data => {:confirm => "You sure?",
-  :method => "delete"} %></p>
-
-  <% if @alreadyjoined.values.empty? == true %>
-
-  <p><%= link_to "Join Event", add_event_path(@event),
-    :data => {:confirm => "Are you sure?",
-    :method => "add"} %></p>
-
-      <% end %>
-
-    <p><%= link_to "More Events", events_path %></p>
 
 
     <% if @event.user_id == current_user.id %>
-
-    <p><%= link_to "Delete Event", event_path(@event),
-      :data => {:confirm => "Are you sure?",
+    <p class="card-text"><%= link_to "Edit", edit_event_path(@event) %></p>
+    <p class="card-text"><%= link_to "Delete", event_path(@event),
+      :data => {:confirm => "You sure?",
       :method => "delete"} %></p>
-    <p><%= link_to "Edit Event", edit_event_path(@event) %></p>
       <% else %>
-      <p> </p>
+      <p class="card-text"> </p>
       <% end %>
+      <% if @alreadyjoined.values.empty? == true %>
 
-      <% if @signedup_user_names.any? %>
-      <ul>
-        <%  @signedup_user_names.each do |name| %>
-        <li><%= link_to name, user_path(User.find_by(user_name_first: name))  %></li>
+      <p class="card-text"><%= link_to "Join Event", add_event_path(@event),
+        :data => {:confirm => "Are you sure?",
+        :method => "add"} %></p>
+
         <% end %>
-      </ul>
 
-      <% else %>
+        <p class="card-text"><%= link_to "More Events", events_path %></p>
 
-      <p>There is no one signed up for this event yet. Be the first!</p>
 
-      <% end %>
+        <% if @signedup_user_names.any? %>
+        <h3>Here are the people going to the event:</h3>
+
+        <%  @signedup_user_names.each do |name| %>
+        <p class="card-text"><%= link_to name, user_path(User.find_by(user_name_first: name))  %></p>
+        <% end %>
+        <% else %>
+        <p>There is no one signed up for this event yet. Be the first!</p>
+        <% end %>
+      </div>
+    </div>

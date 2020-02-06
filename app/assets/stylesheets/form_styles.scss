@@ -21,14 +21,17 @@ color: navy;
   border-bottom: solid #3AAFA9;
  font-family: 'Sigmar One', cursive;
 }
+
 .event_form_inputs, .signup_form_inputs, .signin_form_inputs{
 width:100%;
 padding:10px;
 }
+
 .event_form_labels, .signup_form_labels, .signin_form_labels{
 width:100%;
 }
-.event_form_button, .signup_form_button, #signin_button {
+
+.event_form_button, .signup_form_button {
   background-color: navy;
   color: white;
   padding: 5px 40px;
@@ -37,8 +40,12 @@ width:100%;
   border-radius: 50px;
   border: none;
   margin: 15px;
-
 }
+
+#sign_in_button {
+  text-align: center;
+}
+
 .event_form_button:hover {background-color: #3e8e41
 }
 .event_form_button:active{

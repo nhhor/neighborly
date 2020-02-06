@@ -93,6 +93,8 @@ class EventsController < ApplicationController
         #not allowing the user to join multiple times
         sql2 = "select * from events_users where user_id = #{@id} and event_id = #{@event.id};"
         @alreadyjoined= ActiveRecord::Base.connection.execute(sql2)
+
+        # binding.pry
         render :show
       end
 
