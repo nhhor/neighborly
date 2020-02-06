@@ -1,4 +1,4 @@
-<div class="signin_form">
+<div class="signin_form" id="center_forms">
 
   <h1> Sign in</h1>
 
@@ -10,7 +10,7 @@
 
     <%= label_tag :password  %>
     <%= password_field_tag :password %>
-    <div id="signin_button"><%= submit_tag "Sign in" %>
+    <div id="sign_in_button"><%= submit_tag "Sign in", class: 'signup_form_button' %>
     </div>
   <% end %>
 
