@@ -34,7 +34,7 @@
 
 
           <% if current_user %>
-          <span class ="nav_welcome_text">Welcome back, <%= current_user.user_email %> !<BR><BR> </span><%= link_to "Sign out", '/signout', class: "nav_signout_button" %> <a href="/events" class="nav_event_button">All Events</a>
+          <br><%= link_to "Sign out", '/signout', class: "nav_signout_button" %>  <a href="/events" class="nav_event_button">All Events</a>
           <% else %>
           <%= link_to "Sign up", signup_path, class: "nav_signup_button" %> <%= link_to "Sign in", '/signin', class: "nav_signin_button" %>
           <% end %>
