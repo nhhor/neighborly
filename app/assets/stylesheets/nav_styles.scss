@@ -8,8 +8,6 @@
   position: absolute;
   z-index: 1;
   color: navy;
-margin:0 2%;
-
 }
 
 
@@ -22,6 +20,7 @@ margin:0 2%;
     width: 100vw;
 
 }
+
 .nav_welcome_text{
   font-family: 'Sigmar One';
   font-size: 20px;
@@ -39,20 +38,20 @@ margin:0 2%;
 
 }
 .nav_signin_button{
-font-size: 8pt;
+font-size: 22pt;
 	color:#6BFA6B;
 }
 .nav_signout_button{
 	color:#FB0413;
-	font-size: 8pt;
+	font-size: 22pt;
 }
 .nav_signup_button{
 	color:#FBEC04;
-	font-size: 8pt;
+	font-size: 22pt;
 }
 .nav_event_button{
   color: yellow;
-  font-size: 8pt;
+  font-size: 22pt;
 }
 .submit_form_button{
   color: white;

@@ -1,15 +1,19 @@
-<h1>ALl Users</h1>
+<div class="card" id ="all_user_display" >
+  <div class="card-body">
+    <h1 class="card-title">All Users</h1>
 
-<% if @users %>
+    <% if @users %>
 
-<ul>
+    <ul class="card-text">
 
-  <%@users.each do |user| %>
-  <li><%= link_to user.user_name_first, user_path(user) %></li>
-  <% end %>
-</ul>
-<% else %>
+      <%@users.each do |user| %>
+      <li class="card-text"><%= link_to user.user_name_first, user_path(user) %></li>
+      <% end %>
+    </ul>
+    <% else %>
 
-<p>There are no users to display</p>
+    <p class="card-text">There are no users to display</p>
 
-<% end %>
+    <% end %>
+  </div>
+</div>

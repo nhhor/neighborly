@@ -3,7 +3,7 @@
   <div class="card-body">
     <h3 class="card-title"><%= @event.event_name %></h3>
     <p class="card-text"> <em class="emClass">WHEN: </em> <%= @event.event_date %> at <%= @event.event_time.strftime('%l:%M:%S %p') %> </p>
-    <p class="card-text"><p>Created by: <%= @event.user.user_email %></p>
+    <p class="card-text"><p>CREATED BY: <%= @event.user.user_email %></p>
     <!-- </p> -->
 
     <p class="card-text">WHERE: <%= @event.event_address %> <%= @event.event_city %>, <%= @event.event_state %> <%= @event.event_zip %></p>

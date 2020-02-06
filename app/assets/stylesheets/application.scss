@@ -104,7 +104,6 @@ body  {
 
 .card-columns {
 padding-left: 10%;
-
 }
 
 .card {
@@ -130,10 +129,41 @@ padding-left: 10%;
   transform: translate(-50%, -50%);
 }
 
+#individual_user_display {
+  height: 600px;
+  margin: 0;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+
+#all_user_display {
+  height: 600px;
+  margin: 0;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  padding-left: 40px;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
 #center_forms {
   margin: 0;
   position: absolute;
   top: 35%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+#center_search {
+  margin: 0;
+  position: absolute;
+  top: 30%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
