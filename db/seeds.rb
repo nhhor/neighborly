@@ -12,7 +12,7 @@
 
 15.times do |index|
   users = []
-  users.push(User.create!(user_email: Faker::Internet.free_email,user_name_first: Faker::GreekPhilosophers.name, user_name_last: Faker::GreekPhilosophers.name, user_zip: Faker::Number.between(from: 97201, to: 97299), password: 'password',password_confirmation: 'password'))
+  users.push(User.create!(user_email: Faker::Internet.free_email,user_name_first: Faker::Name.first_name, user_name_last: Faker::Name.last_name, user_zip: Faker::Number.between(from: 97201, to: 97299), password: 'password',password_confirmation: 'password'))
   users
   rand(2..5).times do |review|
     users.each do |user|
