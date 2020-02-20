@@ -43,8 +43,6 @@ body  {
   position: fixed;
   top: 0px;
   left: 0px;
-  // background: rgb(2,0,36);
-  // background: linear-gradient(179deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 25%, rgba(58,175,169,1) 75%, rgba(58,175,169,0.75) 100%);
   width: 100vw;
   height: 10vh;
 }
@@ -57,11 +55,8 @@ body  {
 }
 
 .welcome {
-  // position: absolute;
-  // top: 25%;
   padding-top: 5%;
   overflow: hidden;
-  // left: 25vw;
   width: 100%;
   height: 80vh;
   color: #DEF2F1;
@@ -88,19 +83,10 @@ body  {
 .flash_messages{
   float: right;
   font-size: 20pt;
-  // background-color: yellow;
   position: fixed;
   top: 100px;
   right: 50px;
   z-index: 2;
-  // background: rgba(250, 250, 250, .75);
-  // margin: 10px;
-  // display: inline-block;
-  // border-radius: 5%;
-  // padding: 15px;
-  // border-style: outset;
-  // border-width: 2px;
-  // border-color: teal;
 }
 
 .card-columns {
@@ -118,6 +104,7 @@ body  {
   border-style: outset;
   border-width: 2px;
   border-color: teal;
+  overflow: scroll;
 }
 
 .card-text {
@@ -128,7 +115,6 @@ body  {
   font-size: 30px;
   font-weight: bolder;
   font-family: 'Righteous', cursive;
-  // opacity: 0.7;
 }
 
 .card-title:hover {
@@ -190,15 +176,6 @@ a:link {
   transform: translate(-50%, -50%);
 }
 
-// #center_all_events {
-//   margin: 0;
-//   position: absolute;
-//   top: 30%;
-//   left: 50%;
-//   margin-right: -50%;
-//   transform: translate(-50%, -50%);
-// }
-
 .new_event_path {
   position: fixed;
   top: 150px;
@@ -231,9 +208,7 @@ a:link {
   display: flex;
   align-items: center;
   justify-content: center;
-  // min-height: 100vh;
   min-height: 35rem;
-  // background-image: linear-gradient(to bottom,  rgba(255,168,76,0.6) 0%,rgba(255,123,13,0.6) 100%), url('https://images.unsplash.com/photo-1446824505046-e43605ffb17f');
   background-blend-mode: soft-light;
   background-size: cover;
   background-position: center center;
@@ -387,9 +362,3 @@ a:link {
   }
 
 }
-
-
-// .signInLink {
-//   z-index: 99;
-//   position: relative;
-// }

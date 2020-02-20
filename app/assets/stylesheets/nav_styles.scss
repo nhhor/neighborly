@@ -10,15 +10,12 @@
   color: navy;
 }
 
-
 .nav_bar{
-
   z-index: 1;
   color: navy;
   padding: 1%;
-    height: 25%;
-    width: 100vw;
-
+  height: 25%;
+  width: 100vw;
 }
 
 .nav_welcome_text{
@@ -35,25 +32,28 @@
 	box-shadow: -2px 2px 4px black;
 	border-radius: 50px;
   border: none;
-
 }
+
 .nav_signin_button{
 font-size: 22pt;
 	color:#6BFA6B;
-  
 }
+
 .nav_signout_button{
 	color:#FB0413;
 	font-size: 22pt;
 }
+
 .nav_signup_button{
 	color:#FBEC04;
 	font-size: 22pt;
 }
+
 .nav_event_button{
   color: yellow;
   font-size: 22pt;
 }
+
 .submit_form_button{
   color: white;
   padding: 2px 10px;
